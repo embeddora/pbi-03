@@ -34,23 +34,26 @@
  */
 template<class T> class Singleton : virtual private Uncopyable<Singleton<T>>
 {
-    private:
-        friend T;
+private:
+	friend T;
 
-    private:
-        Singleton() = default; // Can't be instanciated
-        virtual ~Singleton() = default;
+private:
+	// Can't be instanciated
+	Singleton() = default;
 
-    public:
+	virtual ~Singleton() = default;
 
+public:
         /**
          * Returns the singleton instance.
          *
          * \return Singleton instance.
          */
-        static T& getInstance() {
-            static T m;
-            return m;
+        static T& getInstance()
+	{
+		static T m;
+
+		return m;
         }
 
         /**
@@ -58,8 +61,9 @@ template<class T> class Singleton : virtual private Uncopyable<Singleton<T>>
          *
          * \return Pointer to the singleton instance.
          */
-        static T* getInstancePtr() {
-            return &Singleton<T>::getSingleton();
+        static T* getInstancePtr()
+	{
+		return &Singleton<T>::getSingleton();
         }
 };
 

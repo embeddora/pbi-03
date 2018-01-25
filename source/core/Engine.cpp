@@ -205,7 +205,7 @@ const float h       = WINDOW_DEFAULT_SIZE_H;
 			*/
 		}
 
-		m.rotation.y += 0.0015; //TODO tmp
+		m.rotation.y += 0.0025; //TODO tmp
 	}
 }
 
@@ -222,14 +222,52 @@ void Engine::handleEvent(SDL_Event* sdlevent)
 	{
 	case SDL_QUIT:
 
+		std::cout << "(SDL_QUIT)" << std::endl;
+
 		this->stopRendering();
 
 		break;
 
 	case SDL_MOUSEWHEEL:
 
-		cctv.position.z += sdlevent->wheel.y * 0.005f;
+		cctv.position.z += sdlevent->wheel.y * 0.2f;//0.05f;//0.005f;
 
 		break;
+
+	case SDL_KEYDOWN:
+
+		std::cout << "(SDL_KEYDOWN)" << std::endl;
+
+		SDL_FlushEvent(SDL_KEYDOWN);
+
+		break;
+
+	case SDL_KEYUP:
+
+		//+++ std::cout << "(SDL_KEYUP)" << std::endl;
+
+		SDL_FlushEvent(SDL_KEYUP);
+
+		break;
+
+	case SDL_TEXTINPUT:
+
+		std::cout << "(SDL_TEXTINPUT)" << std::endl;
+
+		SDL_FlushEvent(SDL_TEXTINPUT);
+
+		break;
+
+		/*
+		case SDL_MOUSEMOTION:
+		case SDL_MOUSEBUTTONDOWN:
+		case SDL_MOUSEBUTTONUP:
+		case SDL_MOUSEWHEEL:
+		case SDL_KEYDOWN:
+		case SDL_KEYUP:
+		case SDL_TEXTINPUT:
+		*/
 	}
+
+
 }

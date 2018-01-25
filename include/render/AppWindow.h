@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _APPWINDOW_H_
+#define _APPWINDOW_H_
 
 #include <iostream>
 
@@ -10,7 +11,8 @@
  * \author  Constantin Masson
  * \date    July 2017
  */
-class AppWindow {
+class AppWindow
+{
     public:
         AppWindow();
 
@@ -93,4 +95,4 @@ class AppWindow {
          */
         virtual void getPosition(int* left, int* top) const = 0;
 };
-
+#endif // #ifndef _APPWINDOW_H_

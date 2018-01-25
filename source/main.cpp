@@ -26,7 +26,7 @@
 
 int main(int argc, char**argv)
 {
-	std::cout << "*** Main ***" << std::endl;
+	std::cout << "main(int argc, char**argv)" << std::endl;
 
 	Engine& engine = Engine::getInstance();
 

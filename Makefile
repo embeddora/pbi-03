@@ -14,8 +14,11 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-#  Abstract: a makefile for 'Post-Browser Interface #1' project
+#  Abstract: a makefile for 'Post-Browser Interface #3' project
 
+
+# Project Name, i.e. 'Post-Browser Interface #3' abbreviated 
+PROJ	=PBI3
 
 
 CPPFLAGS=-I./include   -std=gnu++11  -g
@@ -35,6 +38,10 @@ OBJS=   source/core/Camera.cpp.o source/core/Engine.cpp.o \
 # Not cross-compiling till instance for <Linux/i585> platform is ready
 PREFIX=
 
+DOCSCFG=docs.cfg
+
+DOCSDIR=./docs
+
 CPP=$(PREFIX)g++
 
 LD=$(PREFIX)ld
@@ -51,11 +58,19 @@ $(TARGET): $(OBJS)
 
 GRBG=	source/render/SDL2/*.o source/render/*.o source/*.o source/core/*.o       \
 	source/render/SDL2/*~  source/render/*~  source/*~  source/core/*~        \
-	include/render/SDL2/*~ include/render/*~ source/math/*~  include/core/*~  \
-        $(TARGET)  core                                                            \
+	include/render/SDL2/*~ include/render/*~ include/math/*~  include/core/*~ \
 	./*.o ./*~
 
+GRBGxt= $(TARGET) $(DOCSDIR) core  *.tar.gz
+
+
+.PHONY: clean docs tar 
+
+docs: $(DOCSCFG)
+	doxygen $<
+
+tar:
+	$(MAKE) clean ; $(MAKE) docs; tar cfvz $(PROJ).source.tar.gz ./source   ./include   ./resources ; tar cfvz $(PROJ).docs.tar.gz ./doxydoc
+
 clean:
-	rm $(GRBG) #; rm -r -v $(GRBGD)
-
-
+	rm $(GRBG) $(GRBGxt) ; rm -r -v $(DOCSDIR)

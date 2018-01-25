@@ -1,17 +1,43 @@
-#pragma once
+/*
+ * Copyright (C) 2018 ARNERI arneri@ukr.net All rights reserved
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ * Abstract: 
+ */
+
+#ifndef _DRAWSDLUTILS_H_
+#define _DRAWSDLUTILS_H_
 
 #include <SDL2/SDL.h>
+
 #include <cmath>
+
 #include "math/VectF3.h"
 
 
 /**
  * Data for a vertices.
  */
-typedef struct {
-    VectF3 *screenPos; // Position projected on the 2D screen
-    VectF3 *normal; // Normal position in transformed coordinates
-    VectF3 *transPos; // Position in transformed coordinates
+typedef struct
+{
+	VectF3 *screenPos; // Position projected on the 2D screen
+
+	VectF3 *normal; // Normal position in transformed coordinates
+
+	VectF3 *transPos; // Position in transformed coordinates
+
 } VertexData;
 
 
@@ -68,3 +94,4 @@ class DrawSDLUtils {
         static void drawClippedPoint(SDL_Renderer* renderer, int x, int y, int w, int h);
 };
 
+#endif // #ifndef _DRAWSDLUTILS_H_
