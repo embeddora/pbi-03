@@ -1,0 +1,509 @@
+\hypertarget{classMatrixF4}{\section{Matrix\-F4 Class Reference}
+\label{classMatrixF4}\index{Matrix\-F4@{Matrix\-F4}}
+}
+
+
+{\ttfamily \#include $<$Matrix\-F4.\-h$>$}
+
+
+
+Collaboration diagram for Matrix\-F4\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classMatrixF4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \-\_\-m\mbox{[}4\mbox{]}\mbox{[}4\mbox{]} \hyperlink{classMatrixF4_ae75c804da7a25fa16643c66c5df77b38}{G\-C\-C\-\_\-\-A\-L\-I\-G\-N\-E\-D} (16)
+\item 
+\hyperlink{classMatrixF4_a7703bbcd22be678824564830ea0636a8}{Matrix\-F4} ()
+\item 
+\hyperlink{classMatrixF4_a06536ada78c655a54493d0a3a4e0b811}{Matrix\-F4} (const float value)
+\item 
+\hyperlink{classMatrixF4_ae78b5029299574e834eb51d392878b64}{Matrix\-F4} (\hyperlink{classVectF4}{Vect\-F4} const \&row1, \hyperlink{classVectF4}{Vect\-F4} const \&row2, \hyperlink{classVectF4}{Vect\-F4} const \&row3, \hyperlink{classVectF4}{Vect\-F4} const \&row4)
+\item 
+\hyperlink{classMatrixF4_a821d7645f68d4b128e9cb214d1c2d932}{Matrix\-F4} (const float m00, const float m01, const float m02, const float m03, const float m10, const float m11, const float m12, const float m13, const float m20, const float m21, const float m22, const float m23, const float m30, const float m31, const float m32, const float m33)
+\item 
+\hyperlink{classMatrixF4_a1046b47fe9a75f4336ce6a4c530aa0e5}{Matrix\-F4} (\hyperlink{classMatrixF3}{Matrix\-F3} const \&m3)
+\item 
+\hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixF4_aec3dfeb9a94f52c442de00a94493637f}{get\-Transposition} () const 
+\item 
+void \hyperlink{classMatrixF4_a601cf1de43a1b6f90b9532e6f68a6d6f}{transpose} ()
+\item 
+void \hyperlink{classMatrixF4_a54ad8a87c212875c551c0c6493d3b128}{set} (\hyperlink{classMatrixF4}{Matrix\-F4} const \&m)
+\item 
+\hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixF4_a4056e5f174b9e560891f17eea07dce06}{operator$\ast$} (float const s) const 
+\item 
+\hyperlink{classVectF4}{Vect\-F4} \hyperlink{classMatrixF4_a7ded363318824cfa0c736925ce498721}{operator$\ast$} (\hyperlink{classVectF4}{Vect\-F4} const \&v) const 
+\item 
+\hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixF4_ac3c006966be634f3ef571853323af000}{operator$\ast$} (\hyperlink{classMatrixF4}{Matrix\-F4} const \&m) const 
+\item 
+\hyperlink{classMatrixF4}{Matrix\-F4} \& \hyperlink{classMatrixF4_adb4f20cad88563060c3efb6326bcbc24}{operator$\ast$=} (float const s)
+\item 
+\hyperlink{classMatrixF4}{Matrix\-F4} \& \hyperlink{classMatrixF4_a350bb18ec44cab6b2c120beb59044c48}{operator$\ast$=} (\hyperlink{classMatrixF4}{Matrix\-F4} const \&m)
+\item 
+bool \hyperlink{classMatrixF4_aff7b6b04c09a21aaebd08aaee0df906d}{operator==} (\hyperlink{classMatrixF4}{Matrix\-F4} const \&m) const 
+\item 
+bool \hyperlink{classMatrixF4_a066a22bcbcc6a78f727f9054b3b8a2f0}{operator!=} (\hyperlink{classMatrixF4}{Matrix\-F4} const \&m) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixF4_a4ca61fdbc8c1dbec86abd1df07c61aa9}{I\-D\-E\-N\-T\-I\-T\-Y} ()
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixF4_a1f4bbc3a5a855ac20b66ff6c67bf6543}{Z\-E\-R\-O} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A 4x4 matrix with floating point precision.
+
+\begin{DoxyRemark}{Remarks}
+Matrix multiplication with Vector use a 'Column vector' transformation. This means a multiplication with a vector V is done in the right-\/to-\/left order. For instance, M1 $\ast$ M2 $\ast$ M3 $\ast$ V1 will actually calculate M3 $\ast$ V1 first.
+\end{DoxyRemark}
+This is an illustration of the final calculation\-: (M1 $\ast$ (M2 $\ast$ (M3 $\ast$ V1) ) )
+
+\begin{DoxyParagraph}{}
+Order is important since matrix multiplication is not commutative. Right-\/to-\/left order is the common representation used by Open\-G\-L for instance.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Matrix is stored contiguously in memory in a row fashion\-: each row contains a single vector.
+\end{DoxyParagraph}
+\begin{DoxySince}{Since}
+\-: Jun 24, 2017 
+\end{DoxySince}
+\begin{DoxyAuthor}{Author}
+\-: Constantin Masson 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMatrixF4_a7703bbcd22be678824564830ea0636a8}{\index{Matrix\-F4@{Matrix\-F4}!Matrix\-F4@{Matrix\-F4}}
+\index{Matrix\-F4@{Matrix\-F4}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{Matrix\-F4}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Matrix\-F4\-::\-Matrix\-F4 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMatrixF4_a7703bbcd22be678824564830ea0636a8}
+Create a new 4x4 matrix filled with zero. 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixF4_a7703bbcd22be678824564830ea0636a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixF4_a06536ada78c655a54493d0a3a4e0b811}{\index{Matrix\-F4@{Matrix\-F4}!Matrix\-F4@{Matrix\-F4}}
+\index{Matrix\-F4@{Matrix\-F4}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{Matrix\-F4}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Matrix\-F4\-::\-Matrix\-F4 (
+\begin{DoxyParamCaption}
+\item[{const float}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMatrixF4_a06536ada78c655a54493d0a3a4e0b811}
+Create a new 4x4 matrix with all components set to a specific value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Matrix is filled with it. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMatrixF4_ae78b5029299574e834eb51d392878b64}{\index{Matrix\-F4@{Matrix\-F4}!Matrix\-F4@{Matrix\-F4}}
+\index{Matrix\-F4@{Matrix\-F4}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{Matrix\-F4}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Matrix\-F4\-::\-Matrix\-F4 (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F4} const \&}]{row1, }
+\item[{{\bf Vect\-F4} const \&}]{row2, }
+\item[{{\bf Vect\-F4} const \&}]{row3, }
+\item[{{\bf Vect\-F4} const \&}]{row4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMatrixF4_ae78b5029299574e834eb51d392878b64}
+Create a new 4x4 matrix from 4 vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em row1} & Values for positions m\mbox{[}0\mbox{]}\mbox{[}0\mbox{]} to m\mbox{[}0\mbox{]}\mbox{[}3\mbox{]}. \\
+\hline
+{\em row2} & Values for positions m\mbox{[}1\mbox{]}\mbox{[}0\mbox{]} to m\mbox{[}1\mbox{]}\mbox{[}3\mbox{]}. \\
+\hline
+{\em row3} & Values for positions m\mbox{[}2\mbox{]}\mbox{[}0\mbox{]} to m\mbox{[}2\mbox{]}\mbox{[}3\mbox{]}. \\
+\hline
+{\em row4} & Values for positions m\mbox{[}3\mbox{]}\mbox{[}0\mbox{]} to m\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMatrixF4_a821d7645f68d4b128e9cb214d1c2d932}{\index{Matrix\-F4@{Matrix\-F4}!Matrix\-F4@{Matrix\-F4}}
+\index{Matrix\-F4@{Matrix\-F4}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{Matrix\-F4}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Matrix\-F4\-::\-Matrix\-F4 (
+\begin{DoxyParamCaption}
+\item[{const float}]{m00, }
+\item[{const float}]{m01, }
+\item[{const float}]{m02, }
+\item[{const float}]{m03, }
+\item[{const float}]{m10, }
+\item[{const float}]{m11, }
+\item[{const float}]{m12, }
+\item[{const float}]{m13, }
+\item[{const float}]{m20, }
+\item[{const float}]{m21, }
+\item[{const float}]{m22, }
+\item[{const float}]{m23, }
+\item[{const float}]{m30, }
+\item[{const float}]{m31, }
+\item[{const float}]{m32, }
+\item[{const float}]{m33}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMatrixF4_a821d7645f68d4b128e9cb214d1c2d932}
+Create a new 4x4 matrix with each component explicitly set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m00} & Component at Row 0 Column 0. \\
+\hline
+{\em m01} & Component at Row 0 Column 1. \\
+\hline
+{\em m02} & Component at Row 0 Column 2. \\
+\hline
+{\em m03} & Component at Row 0 Column 3.\\
+\hline
+{\em m10} & Component at Row 1 Column 0. \\
+\hline
+{\em m11} & Component at Row 1 Column 1. \\
+\hline
+{\em m12} & Component at Row 1 Column 2. \\
+\hline
+{\em m13} & Component at Row 1 Column 3.\\
+\hline
+{\em m20} & Component at Row 2 Column 0. \\
+\hline
+{\em m21} & Component at Row 2 Column 1. \\
+\hline
+{\em m22} & Component at Row 2 Column 2. \\
+\hline
+{\em m23} & Component at Row 2 Column 3.\\
+\hline
+{\em m30} & Component at Row 3 Column 0. \\
+\hline
+{\em m31} & Component at Row 3 Column 1. \\
+\hline
+{\em m32} & Component at Row 3 Column 2. \\
+\hline
+{\em m33} & Component at Row 3 Column 3. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMatrixF4_a1046b47fe9a75f4336ce6a4c530aa0e5}{\index{Matrix\-F4@{Matrix\-F4}!Matrix\-F4@{Matrix\-F4}}
+\index{Matrix\-F4@{Matrix\-F4}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{Matrix\-F4}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Matrix\-F4\-::\-Matrix\-F4 (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrix\-F3} const \&}]{m3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMatrixF4_a1046b47fe9a75f4336ce6a4c530aa0e5}
+Create a new 4x4 matrix from a 3x3.
+
+\begin{DoxyRemark}{Remarks}
+A 4x4 matrix can be partitioned into 4 components. The upper 3x3 matrix U. The 1x3 translation vector t. The 3x1 vector of 0. And the scalar 1 at the bottom right.
+\end{DoxyRemark}
+\begin{DoxyParagraph}{}
+The given 3x3 is the U matrix. Translation vector is set to 0 and scalar is set to 1.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+This is the case of Column vector convention. 
+\end{DoxyParagraph}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classMatrixF4}{Matrix\-F4} documentation for remind about the used Matrix representation. 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMatrixF4_ae75c804da7a25fa16643c66c5df77b38}{\index{Matrix\-F4@{Matrix\-F4}!G\-C\-C\-\_\-\-A\-L\-I\-G\-N\-E\-D@{G\-C\-C\-\_\-\-A\-L\-I\-G\-N\-E\-D}}
+\index{G\-C\-C\-\_\-\-A\-L\-I\-G\-N\-E\-D@{G\-C\-C\-\_\-\-A\-L\-I\-G\-N\-E\-D}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{G\-C\-C\-\_\-\-A\-L\-I\-G\-N\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}float \-\_\-m \mbox{[}4\mbox{]}\mbox{[}4\mbox{]} Matrix\-F4\-::\-G\-C\-C\-\_\-\-A\-L\-I\-G\-N\-E\-D (
+\begin{DoxyParamCaption}
+\item[{16}]{}
+\end{DoxyParamCaption}
+)}}\label{classMatrixF4_ae75c804da7a25fa16643c66c5df77b38}
+\hypertarget{classMatrixF4_aec3dfeb9a94f52c442de00a94493637f}{\index{Matrix\-F4@{Matrix\-F4}!get\-Transposition@{get\-Transposition}}
+\index{get\-Transposition@{get\-Transposition}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{get\-Transposition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-F4\-::get\-Transposition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMatrixF4_aec3dfeb9a94f52c442de00a94493637f}
+Returns the transposition of this matrix. Transposition is the matrix where m\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} = this\mbox{[}j\mbox{]}\mbox{[}i\mbox{]}.
+
+\begin{DoxyReturn}{Returns}
+New Transposition matrix. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixF4_aec3dfeb9a94f52c442de00a94493637f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixF4_a4ca61fdbc8c1dbec86abd1df07c61aa9}{\index{Matrix\-F4@{Matrix\-F4}!I\-D\-E\-N\-T\-I\-T\-Y@{I\-D\-E\-N\-T\-I\-T\-Y}}
+\index{I\-D\-E\-N\-T\-I\-T\-Y@{I\-D\-E\-N\-T\-I\-T\-Y}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{I\-D\-E\-N\-T\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-F4\-::\-I\-D\-E\-N\-T\-I\-T\-Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixF4_a4ca61fdbc8c1dbec86abd1df07c61aa9}
+Identity matrix. Matrix filled with 1 on its diagonal.
+
+\begin{DoxyReturn}{Returns}
+New identity matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classMatrixF4_a4ca61fdbc8c1dbec86abd1df07c61aa9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixF4_a4ca61fdbc8c1dbec86abd1df07c61aa9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixF4_a066a22bcbcc6a78f727f9054b3b8a2f0}{\index{Matrix\-F4@{Matrix\-F4}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} bool Matrix\-F4\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrix\-F4} const \&}]{m}
+\end{DoxyParamCaption}
+) const}}\label{classMatrixF4_a066a22bcbcc6a78f727f9054b3b8a2f0}
+Test inequality of 2 matrix. False as soon as at least one value is not equal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Matrix to test with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this != m, otherwise, return false. 
+\end{DoxyReturn}
+\hypertarget{classMatrixF4_a4056e5f174b9e560891f17eea07dce06}{\index{Matrix\-F4@{Matrix\-F4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-F4\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+) const}}\label{classMatrixF4_a4056e5f174b9e560891f17eea07dce06}
+Multiplies this matrix by a scalar and returns the new matrix. Each this component is multiplied by s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Scalar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New matrix multiplied by the scalar s. 
+\end{DoxyReturn}
+\hypertarget{classMatrixF4_a7ded363318824cfa0c736925ce498721}{\index{Matrix\-F4@{Matrix\-F4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F4} Matrix\-F4\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F4} const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classMatrixF4_a7ded363318824cfa0c736925ce498721}
+Multiplies the matrix with a Vector and returns the new Vector. Use row vector representation, so multiplication is done in Right to Left order. (See remark for several informations).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to multiply with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector V2 = matrix $\ast$ v. 
+\end{DoxyReturn}
+\hypertarget{classMatrixF4_ac3c006966be634f3ef571853323af000}{\index{Matrix\-F4@{Matrix\-F4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-F4\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrix\-F4} const \&}]{m}
+\end{DoxyParamCaption}
+) const}}\label{classMatrixF4_ac3c006966be634f3ef571853323af000}
+Multiplies this matrix with another and returns a new matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Matrix to multiply with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New matrix resulting from the multiplication (this $\ast$ m). 
+\end{DoxyReturn}
+\hypertarget{classMatrixF4_adb4f20cad88563060c3efb6326bcbc24}{\index{Matrix\-F4@{Matrix\-F4}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} \& Matrix\-F4\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+)}}\label{classMatrixF4_adb4f20cad88563060c3efb6326bcbc24}
+Multiplies in place this matrix with a scalar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Scalar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this. 
+\end{DoxyReturn}
+\hypertarget{classMatrixF4_a350bb18ec44cab6b2c120beb59044c48}{\index{Matrix\-F4@{Matrix\-F4}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} \& Matrix\-F4\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrix\-F4} const \&}]{m}
+\end{DoxyParamCaption}
+)}}\label{classMatrixF4_a350bb18ec44cab6b2c120beb59044c48}
+Multiplies in place this matrix with another.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The other matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classMatrixF4_a350bb18ec44cab6b2c120beb59044c48_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixF4_aff7b6b04c09a21aaebd08aaee0df906d}{\index{Matrix\-F4@{Matrix\-F4}!operator==@{operator==}}
+\index{operator==@{operator==}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} bool Matrix\-F4\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrix\-F4} const \&}]{m}
+\end{DoxyParamCaption}
+) const}}\label{classMatrixF4_aff7b6b04c09a21aaebd08aaee0df906d}
+Test equality of 2 matrix. This test if both matrix contains same values. (Does not check if matrix are the same memory entity).
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Matrix to test with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this == m, otherwise, return false. 
+\end{DoxyReturn}
+\hypertarget{classMatrixF4_a54ad8a87c212875c551c0c6493d3b128}{\index{Matrix\-F4@{Matrix\-F4}!set@{set}}
+\index{set@{set}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} void Matrix\-F4\-::set (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrix\-F4} const \&}]{m}
+\end{DoxyParamCaption}
+)}}\label{classMatrixF4_a54ad8a87c212875c551c0c6493d3b128}
+Set this matrix values from another matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The other matrix to copy. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classMatrixF4_a54ad8a87c212875c551c0c6493d3b128_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixF4_a601cf1de43a1b6f90b9532e6f68a6d6f}{\index{Matrix\-F4@{Matrix\-F4}!transpose@{transpose}}
+\index{transpose@{transpose}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{transpose}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} void Matrix\-F4\-::transpose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMatrixF4_a601cf1de43a1b6f90b9532e6f68a6d6f}
+Transpose this matrix in place. Transposition is the matrix where m\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} = this\mbox{[}j\mbox{]}\mbox{[}i\mbox{]}. 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixF4_a601cf1de43a1b6f90b9532e6f68a6d6f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixF4_a1f4bbc3a5a855ac20b66ff6c67bf6543}{\index{Matrix\-F4@{Matrix\-F4}!Z\-E\-R\-O@{Z\-E\-R\-O}}
+\index{Z\-E\-R\-O@{Z\-E\-R\-O}!MatrixF4@{Matrix\-F4}}
+\subsubsection[{Z\-E\-R\-O}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-F4\-::\-Z\-E\-R\-O (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixF4_a1f4bbc3a5a855ac20b66ff6c67bf6543}
+Zero matrix. Matrix filled with 0 everywhere!
+
+\begin{DoxyReturn}{Returns}
+New zero matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classMatrixF4_a1f4bbc3a5a855ac20b66ff6c67bf6543_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixF4_a1f4bbc3a5a855ac20b66ff6c67bf6543_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/math/\hyperlink{MatrixF4_8h}{Matrix\-F4.\-h}\item 
+include/math/\hyperlink{MatrixF4_8inl}{Matrix\-F4.\-inl}\item 
+include/math/\hyperlink{MatrixF4__FPU_8inl}{Matrix\-F4\-\_\-\-F\-P\-U.\-inl}\end{DoxyCompactItemize}

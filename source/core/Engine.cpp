@@ -230,7 +230,8 @@ void Engine::handleEvent(SDL_Event* sdlevent)
 
 	case SDL_MOUSEWHEEL:
 
-		cctv.position.z += sdlevent->wheel.y * 0.2f;//0.05f;//0.005f;
+//+++		cctv.position.z += sdlevent->wheel.y * 0.02f;//0.05f;//0.005f;
+		cctv.position.y += sdlevent->wheel.y * 0.02f;
 
 		break;
 

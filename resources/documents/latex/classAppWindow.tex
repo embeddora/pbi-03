@@ -1,0 +1,269 @@
+\hypertarget{classAppWindow}{\section{App\-Window Class Reference}
+\label{classAppWindow}\index{App\-Window@{App\-Window}}
+}
+
+
+{\ttfamily \#include $<$App\-Window.\-h$>$}
+
+
+
+Inheritance diagram for App\-Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classAppWindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for App\-Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classAppWindow__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAppWindow_a40497071c6b8c7a1453a4ea25824497a}{App\-Window} ()
+\item 
+virtual void \hyperlink{classAppWindow_a075f5ee2671ae2ef1d784fb08f219f11}{initialize} (const char $\ast$name, const int \hyperlink{VectF4_8h_a56eca241e2896b9f57a79589e76fd24b}{w}, const int h)=0
+\item 
+virtual void \hyperlink{classAppWindow_a1445d7fea258f9a0cc0cff5b0bac3376}{initialize} (const char $\ast$name, const int \hyperlink{VectF4_8h_a56eca241e2896b9f57a79589e76fd24b}{w}, const int h, const int l, const int t)=0
+\item 
+virtual void \hyperlink{classAppWindow_a3e135a0853bb07888f6d0a4f683f69fb}{show} ()=0
+\item 
+virtual void \hyperlink{classAppWindow_af5a7e0bcc523f8ef6ddcb6809222423b}{hide} ()=0
+\item 
+virtual void \hyperlink{classAppWindow_abe5e564487bbf48a940966dd4b9c0ca2}{destroy} ()=0
+\item 
+virtual void \hyperlink{classAppWindow_a687484a2b2272823e7a05f123e53e58f}{maximize} ()=0
+\item 
+virtual void \hyperlink{classAppWindow_a495e4e82bd2c56f6f3af83f25accc9d5}{minimize} ()=0
+\item 
+virtual const char $\ast$ \hyperlink{classAppWindow_ac9c9b917ec7923f6bc031417b5081300}{get\-Name} () const =0
+\item 
+virtual void \hyperlink{classAppWindow_a08b53b085d4aac4cdfaa1a1b9cc0b1a7}{set\-Name} (const char $\ast$value)=0
+\item 
+virtual void \hyperlink{classAppWindow_aefd3fedc9909a3d99318787dbd0f3459}{get\-Size} (int $\ast$\hyperlink{VectF4_8h_a56eca241e2896b9f57a79589e76fd24b}{w}, int $\ast$h) const =0
+\item 
+virtual void \hyperlink{classAppWindow_ac9f6b266bae26ae743cc60e1f4a31ce0}{get\-Position} (int $\ast$left, int $\ast$top) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define a generic interface of a window. Any engine rendering element is displayed inside a window.
+
+\begin{DoxyAuthor}{Author}
+Constantin Masson 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+July 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAppWindow_a40497071c6b8c7a1453a4ea25824497a}{\index{App\-Window@{App\-Window}!App\-Window@{App\-Window}}
+\index{App\-Window@{App\-Window}!AppWindow@{App\-Window}}
+\subsubsection[{App\-Window}]{\setlength{\rightskip}{0pt plus 5cm}App\-Window\-::\-App\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAppWindow_a40497071c6b8c7a1453a4ea25824497a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAppWindow_abe5e564487bbf48a940966dd4b9c0ca2}{\index{App\-Window@{App\-Window}!destroy@{destroy}}
+\index{destroy@{destroy}!AppWindow@{App\-Window}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_abe5e564487bbf48a940966dd4b9c0ca2}
+Hide and destroy this Window. 
+
+Implemented in \hyperlink{classAppWindowSDL2_a93166685dfc7a8abd80d6bc9b70a9740}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_ac9c9b917ec7923f6bc031417b5081300}{\index{App\-Window@{App\-Window}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!AppWindow@{App\-Window}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ App\-Window\-::get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_ac9c9b917ec7923f6bc031417b5081300}
+Get Window current title.
+
+\begin{DoxyReturn}{Returns}
+The name (Constant pointer). 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classAppWindowSDL2_a64e9c06dfdbf16734f35254d0b0f502b}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_ac9f6b266bae26ae743cc60e1f4a31ce0}{\index{App\-Window@{App\-Window}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!AppWindow@{App\-Window}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::get\-Position (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{left, }
+\item[{int $\ast$}]{top}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_ac9f6b266bae26ae743cc60e1f4a31ce0}
+Get top left corner position of the Window. Place x position in left and y position in top.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & X position of the Window. \\
+\hline
+{\em top} & Y position of the Window. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classAppWindowSDL2_a3b8b8643947afabd7f2b66b0d12a34e1}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_aefd3fedc9909a3d99318787dbd0f3459}{\index{App\-Window@{App\-Window}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!AppWindow@{App\-Window}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::get\-Size (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{w, }
+\item[{int $\ast$}]{h}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_aefd3fedc9909a3d99318787dbd0f3459}
+Get the window used size. Place width in w and height in h.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & Where width value is placed. \\
+\hline
+{\em h} & Where height value is placed. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classAppWindowSDL2_aa847e6e3c2049fa2fddbb64ba74f22e8}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_af5a7e0bcc523f8ef6ddcb6809222423b}{\index{App\-Window@{App\-Window}!hide@{hide}}
+\index{hide@{hide}!AppWindow@{App\-Window}}
+\subsubsection[{hide}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::hide (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_af5a7e0bcc523f8ef6ddcb6809222423b}
+Hide this Window 
+
+Implemented in \hyperlink{classAppWindowSDL2_a51f4c0c28cc3cc02885312d83f9e40bd}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_a075f5ee2671ae2ef1d784fb08f219f11}{\index{App\-Window@{App\-Window}!initialize@{initialize}}
+\index{initialize@{initialize}!AppWindow@{App\-Window}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::initialize (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const int}]{w, }
+\item[{const int}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_a075f5ee2671ae2ef1d784fb08f219f11}
+Initialize all data for this window. Window is ready to be displayed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Title of the window. \\
+\hline
+{\em w} & Window's width. \\
+\hline
+{\em h} & Window's height. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classAppWindowSDL2_a1adbcd6281ca59a7e1dcdb206eb55028}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_a1445d7fea258f9a0cc0cff5b0bac3376}{\index{App\-Window@{App\-Window}!initialize@{initialize}}
+\index{initialize@{initialize}!AppWindow@{App\-Window}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::initialize (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const int}]{w, }
+\item[{const int}]{h, }
+\item[{const int}]{l, }
+\item[{const int}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_a1445d7fea258f9a0cc0cff5b0bac3376}
+Initialize all data for this window. Window is ready to be displayed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Title of the window. \\
+\hline
+{\em w} & Window's width. \\
+\hline
+{\em h} & Window's height. \\
+\hline
+{\em l} & The x position of the window. \\
+\hline
+{\em t} & The y position of the window. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classAppWindowSDL2_abcebe12c7251e837fff10a445ad08845}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_a687484a2b2272823e7a05f123e53e58f}{\index{App\-Window@{App\-Window}!maximize@{maximize}}
+\index{maximize@{maximize}!AppWindow@{App\-Window}}
+\subsubsection[{maximize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::maximize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_a687484a2b2272823e7a05f123e53e58f}
+Maximize the Window to use the maximum possible size. 
+
+Implemented in \hyperlink{classAppWindowSDL2_ae3a42bcd6c5cf2d452838085e5e0eecb}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_a495e4e82bd2c56f6f3af83f25accc9d5}{\index{App\-Window@{App\-Window}!minimize@{minimize}}
+\index{minimize@{minimize}!AppWindow@{App\-Window}}
+\subsubsection[{minimize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::minimize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_a495e4e82bd2c56f6f3af83f25accc9d5}
+Minimize the Window to an iconic representation. 
+
+Implemented in \hyperlink{classAppWindowSDL2_a6c0b650d1b15140d7f163956d0689327}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_a08b53b085d4aac4cdfaa1a1b9cc0b1a7}{\index{App\-Window@{App\-Window}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!AppWindow@{App\-Window}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_a08b53b085d4aac4cdfaa1a1b9cc0b1a7}
+Set Window title.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & New title to place. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classAppWindowSDL2_af7511fea50b7b41fbc03d25a6f160bac}{App\-Window\-S\-D\-L2}.
+
+\hypertarget{classAppWindow_a3e135a0853bb07888f6d0a4f683f69fb}{\index{App\-Window@{App\-Window}!show@{show}}
+\index{show@{show}!AppWindow@{App\-Window}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}virtual void App\-Window\-::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAppWindow_a3e135a0853bb07888f6d0a4f683f69fb}
+Show this Window. 
+
+Implemented in \hyperlink{classAppWindowSDL2_a87c1dc4ef0a137fd0f2080c568c74cc2}{App\-Window\-S\-D\-L2}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/render/\hyperlink{AppWindow_8h}{App\-Window.\-h}\item 
+source/render/\hyperlink{AppWindow_8cpp}{App\-Window.\-cpp}\end{DoxyCompactItemize}

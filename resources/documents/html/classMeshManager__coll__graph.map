@@ -1,0 +1,9 @@
+<map id="MeshManager" name="MeshManager">
+<area shape="rect" id="node2" href="$classSingleton.html" title="{Singleton\&lt; MeshManager \&gt;\n||+ getInstance()\l+ getInstancePtr()\l}" alt="" coords="5,862,187,954"/>
+<area shape="rect" id="node3" href="$classUncopyable.html" title="{Uncopyable\&lt; Singleton\l\&lt; MeshManager \&gt; \&gt;\n||+ Uncopyable()\l+ ~Uncopyable()\l}" alt="" coords="17,691,175,797"/>
+<area shape="rect" id="node5" href="$classMesh.html" title="{Mesh\n||+ Mesh()\l+ Mesh()\l}" alt="" coords="244,698,317,790"/>
+<area shape="rect" id="node7" href="$structFace.html" title="{Face\n||}" alt="" coords="88,307,139,384"/>
+<area shape="rect" id="node10" href="$classVectF3.html" title="{VectF3\n||+ VectF3()\l+ VectF3()\l+ VectF3()\l+ length()\l+ squareLength()\l+ getNormalFast()\l+ normalizeFast()\l+ getCrossProduct()\l+ set()\l+ set()\land 20 more...\l+ dotProduct()\l+ crossProduct()\l}" alt="" coords="214,219,353,472"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="487,536,565,613"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="463,299,589,391"/>
+</map>

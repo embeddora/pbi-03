@@ -1,0 +1,4 @@
+<map id="Engine" name="Engine">
+<area shape="rect" id="node2" href="$classSingleton.html" title="{Singleton\&lt; Engine \&gt;\n||+ getInstance()\l+ getInstancePtr()\l}" alt="" coords="14,161,153,253"/>
+<area shape="rect" id="node3" href="$classUncopyable.html" title="{Uncopyable\&lt; Singleton\l\&lt; Engine \&gt; \&gt;\n||+ Uncopyable()\l+ ~Uncopyable()\l}" alt="" coords="5,5,163,112"/>
+</map>

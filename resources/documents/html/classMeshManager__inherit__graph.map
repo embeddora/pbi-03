@@ -1,0 +1,4 @@
+<map id="MeshManager" name="MeshManager">
+<area shape="rect" id="node2" href="$classSingleton.html" title="{Singleton\&lt; MeshManager \&gt;\n||+ getInstance()\l+ getInstancePtr()\l}" alt="" coords="5,161,187,253"/>
+<area shape="rect" id="node3" href="$classUncopyable.html" title="{Uncopyable\&lt; Singleton\l\&lt; MeshManager \&gt; \&gt;\n||+ Uncopyable()\l+ ~Uncopyable()\l}" alt="" coords="17,5,175,112"/>
+</map>

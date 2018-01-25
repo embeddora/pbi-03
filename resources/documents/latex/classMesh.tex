@@ -1,0 +1,99 @@
+\hypertarget{classMesh}{\section{Mesh Class Reference}
+\label{classMesh}\index{Mesh@{Mesh}}
+}
+
+
+{\ttfamily \#include $<$Mesh.\-h$>$}
+
+
+
+Collaboration diagram for Mesh\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMesh__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMesh_a2af137f1571af89172b9c102302c416b}{Mesh} ()
+\item 
+\hyperlink{classMesh_a9b496cb615ff94d1e7d247eb89810791}{Mesh} (std\-::string \hyperlink{classMesh_ac687e9dcfc7cc60b046fc2ec634200be}{name})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classMesh_ac687e9dcfc7cc60b046fc2ec634200be}{name}
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classMesh_a0df7a55c33bf176617b0784990ccd997}{position}
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classMesh_a5707aace748c2a349a857ed28a3349b4}{rotation}
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classMesh_a5cc407d6c123d2fb84222ae1ebf4ab64}{scale}
+\item 
+std\-::vector$<$ \hyperlink{classVectF3}{Vect\-F3} $>$ \hyperlink{classMesh_aa244d2814833308fc7b96e21b71cccfd}{vertices}
+\item 
+std\-::vector$<$ \hyperlink{classVectF3}{Vect\-F3} $>$ \hyperlink{classMesh_a9aa46069bd2f977d5f3d088b2211f5d3}{normals}
+\item 
+std\-::vector$<$ \hyperlink{structFace}{Face} $>$ \hyperlink{classMesh_a9da199719905f2b213f8c0c8feba2d1f}{faces}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classMesh}{Mesh} is used to represent a 3\-D object. It is made of a set of vertices.
+
+\begin{DoxySince}{Since}
+July 2017 
+\end{DoxySince}
+\begin{DoxyAuthor}{Author}
+Constantin Masson 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMesh_a2af137f1571af89172b9c102302c416b}{\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\subsubsection[{Mesh}]{\setlength{\rightskip}{0pt plus 5cm}Mesh\-::\-Mesh (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classMesh_a2af137f1571af89172b9c102302c416b}
+\hypertarget{classMesh_a9b496cb615ff94d1e7d247eb89810791}{\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\subsubsection[{Mesh}]{\setlength{\rightskip}{0pt plus 5cm}Mesh\-::\-Mesh (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMesh_a9b496cb615ff94d1e7d247eb89810791}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMesh_a9da199719905f2b213f8c0c8feba2d1f}{\index{Mesh@{Mesh}!faces@{faces}}
+\index{faces@{faces}!Mesh@{Mesh}}
+\subsubsection[{faces}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Face}$>$ Mesh\-::faces}}\label{classMesh_a9da199719905f2b213f8c0c8feba2d1f}
+All faces \hypertarget{classMesh_ac687e9dcfc7cc60b046fc2ec634200be}{\index{Mesh@{Mesh}!name@{name}}
+\index{name@{name}!Mesh@{Mesh}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Mesh\-::name}}\label{classMesh_ac687e9dcfc7cc60b046fc2ec634200be}
+The nice mesh's name \hypertarget{classMesh_a9aa46069bd2f977d5f3d088b2211f5d3}{\index{Mesh@{Mesh}!normals@{normals}}
+\index{normals@{normals}!Mesh@{Mesh}}
+\subsubsection[{normals}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Vect\-F3}$>$ Mesh\-::normals}}\label{classMesh_a9aa46069bd2f977d5f3d088b2211f5d3}
+All normal vectors for vertices \hypertarget{classMesh_a0df7a55c33bf176617b0784990ccd997}{\index{Mesh@{Mesh}!position@{position}}
+\index{position@{position}!Mesh@{Mesh}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vect\-F3} Mesh\-::position}}\label{classMesh_a0df7a55c33bf176617b0784990ccd997}
+\hyperlink{classMesh}{Mesh}'s position in 3\-D world space \hypertarget{classMesh_a5707aace748c2a349a857ed28a3349b4}{\index{Mesh@{Mesh}!rotation@{rotation}}
+\index{rotation@{rotation}!Mesh@{Mesh}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vect\-F3} Mesh\-::rotation}}\label{classMesh_a5707aace748c2a349a857ed28a3349b4}
+\hyperlink{classMesh}{Mesh}'s rotation \hypertarget{classMesh_a5cc407d6c123d2fb84222ae1ebf4ab64}{\index{Mesh@{Mesh}!scale@{scale}}
+\index{scale@{scale}!Mesh@{Mesh}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vect\-F3} Mesh\-::scale}}\label{classMesh_a5cc407d6c123d2fb84222ae1ebf4ab64}
+\hyperlink{classMesh}{Mesh}'s scale \hypertarget{classMesh_aa244d2814833308fc7b96e21b71cccfd}{\index{Mesh@{Mesh}!vertices@{vertices}}
+\index{vertices@{vertices}!Mesh@{Mesh}}
+\subsubsection[{vertices}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Vect\-F3}$>$ Mesh\-::vertices}}\label{classMesh_aa244d2814833308fc7b96e21b71cccfd}
+All mesh's vertices 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/core/\hyperlink{Mesh_8h}{Mesh.\-h}\item 
+source/core/\hyperlink{Mesh_8cpp}{Mesh.\-cpp}\end{DoxyCompactItemize}

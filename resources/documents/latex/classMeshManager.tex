@@ -1,0 +1,122 @@
+\hypertarget{classMeshManager}{\section{Mesh\-Manager Class Reference}
+\label{classMeshManager}\index{Mesh\-Manager@{Mesh\-Manager}}
+}
+
+
+{\ttfamily \#include $<$Mesh\-Manager.\-h$>$}
+
+
+
+Inheritance diagram for Mesh\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classMeshManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mesh\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classMeshManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMeshManager_a0ea3bdc14ec06816ece638ebeefd835e}{start\-Up} ()
+\item 
+void \hyperlink{classMeshManager_a446928112a073f1686349a730a3c2d6a}{shut\-Down} ()
+\item 
+void \hyperlink{classMeshManager_a1973e4e7ce96fbd5c497bcf5db599f97}{load\-Meshes\-From\-J\-S\-O\-N} (const char $\ast$file)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{classMesh}{Mesh} $>$ \hyperlink{classMeshManager_af4b938ca5dbb0432d9747818f0aa1fd5}{list\-Meshes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSingleton}{Singleton} manager for meshes.
+
+\begin{DoxySince}{Since}
+August 2017 
+\end{DoxySince}
+\begin{DoxyAuthor}{Author}
+Constantin Masson 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMeshManager_a1973e4e7ce96fbd5c497bcf5db599f97}{\index{Mesh\-Manager@{Mesh\-Manager}!load\-Meshes\-From\-J\-S\-O\-N@{load\-Meshes\-From\-J\-S\-O\-N}}
+\index{load\-Meshes\-From\-J\-S\-O\-N@{load\-Meshes\-From\-J\-S\-O\-N}!MeshManager@{Mesh\-Manager}}
+\subsubsection[{load\-Meshes\-From\-J\-S\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}void Mesh\-Manager\-::load\-Meshes\-From\-J\-S\-O\-N (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{classMeshManager_a1973e4e7ce96fbd5c497bcf5db599f97}
+Load meshes from a Babylone J\-S\-O\-N file. If successfully loaded, add meshes in list of registered meshes.
+
+\begin{DoxySeeAlso}{See Also}
+\href{https://doc.babylonjs.com/generals/file_format_map_(.babylon)#meshes}{\tt https\-://doc.\-babylonjs.\-com/generals/file\-\_\-format\-\_\-map\-\_\-(.\-babylon)\#meshes}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & File to load. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMeshManager_a1973e4e7ce96fbd5c497bcf5db599f97_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMeshManager_a446928112a073f1686349a730a3c2d6a}{\index{Mesh\-Manager@{Mesh\-Manager}!shut\-Down@{shut\-Down}}
+\index{shut\-Down@{shut\-Down}!MeshManager@{Mesh\-Manager}}
+\subsubsection[{shut\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void Mesh\-Manager\-::shut\-Down (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMeshManager_a446928112a073f1686349a730a3c2d6a}
+Stop and clean the \hyperlink{classMeshManager}{Mesh\-Manager}. Should be called once at the end. Do nothing if already already called. \hypertarget{classMeshManager_a0ea3bdc14ec06816ece638ebeefd835e}{\index{Mesh\-Manager@{Mesh\-Manager}!start\-Up@{start\-Up}}
+\index{start\-Up@{start\-Up}!MeshManager@{Mesh\-Manager}}
+\subsubsection[{start\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void Mesh\-Manager\-::start\-Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMeshManager_a0ea3bdc14ec06816ece638ebeefd835e}
+Initialize the \hyperlink{classMeshManager}{Mesh\-Manager}. Should be called once at the beginning. Do nothing if already already called. 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMeshManager_a0ea3bdc14ec06816ece638ebeefd835e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMeshManager_af4b938ca5dbb0432d9747818f0aa1fd5}{\index{Mesh\-Manager@{Mesh\-Manager}!list\-Meshes@{list\-Meshes}}
+\index{list\-Meshes@{list\-Meshes}!MeshManager@{Mesh\-Manager}}
+\subsubsection[{list\-Meshes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Mesh}$>$ Mesh\-Manager\-::list\-Meshes}}\label{classMeshManager_af4b938ca5dbb0432d9747818f0aa1fd5}
+List of all loaded meshes. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/core/\hyperlink{MeshManager_8h}{Mesh\-Manager.\-h}\item 
+source/core/\hyperlink{MeshManager_8cpp}{Mesh\-Manager.\-cpp}\end{DoxyCompactItemize}

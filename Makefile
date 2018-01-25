@@ -38,9 +38,9 @@ OBJS=   source/core/Camera.cpp.o source/core/Engine.cpp.o \
 # Not cross-compiling till instance for <Linux/i585> platform is ready
 PREFIX=
 
-DOCSCFG=docs.cfg
+DOCSCFG=./resources/documents.cfg
 
-DOCSDIR=./docs
+DOCSDIR=./resources/documents
 
 CPP=$(PREFIX)g++
 
@@ -61,7 +61,7 @@ GRBG=	source/render/SDL2/*.o source/render/*.o source/*.o source/core/*.o       
 	include/render/SDL2/*~ include/render/*~ include/math/*~  include/core/*~ \
 	./*.o ./*~
 
-GRBGxt= $(TARGET) $(DOCSDIR) core  *.tar.gz
+GRBGxt= $(TARGET) $(DOCSDIR) core  *.tar.gz resources/*~
 
 
 .PHONY: clean docs tar 
@@ -70,7 +70,7 @@ docs: $(DOCSCFG)
 	doxygen $<
 
 tar:
-	$(MAKE) clean ; $(MAKE) docs; tar cfvz $(PROJ).source.tar.gz ./source   ./include   ./resources ; tar cfvz $(PROJ).docs.tar.gz ./doxydoc
+	$(MAKE) clean ; $(MAKE) docs; tar cfvz $(PROJ).source.tar.gz ./source   ./include   ./resources/meshes ; tar cfvz $(PROJ).docs.tar.gz $(DOCSDIR)
 
 clean:
 	rm $(GRBG) $(GRBGxt) ; rm -r -v $(DOCSDIR)

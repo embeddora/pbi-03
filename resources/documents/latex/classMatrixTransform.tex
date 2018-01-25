@@ -1,0 +1,513 @@
+\hypertarget{classMatrixTransform}{\section{Matrix\-Transform Class Reference}
+\label{classMatrixTransform}\index{Matrix\-Transform@{Matrix\-Transform}}
+}
+
+
+{\ttfamily \#include $<$Matrix\-Transform.\-h$>$}
+
+
+
+Collaboration diagram for Matrix\-Transform\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classMatrixTransform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_a8dd2a9299ec647734bac7b102ca587a8}{crea\-Translate} (\hyperlink{classVectF3}{Vect\-F3} const \&translate)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_a0876b127542db4f6d37ab5df59f25dd2}{crea\-Translate} (const float translate\-X, const float translate\-Y, const float translate\-Z)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_a251c796e40b87980c32a0f142b1eb462}{crea\-Scale} (\hyperlink{classVectF3}{Vect\-F3} const \&scale\-X\-Y\-Z)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_a3492c829cb4bced544895c76ab1ca57a}{crea\-Scale} (const float scale\-X, const float scale\-Y, const float scale\-Z)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_af5fcb785703e6b6a9a7744320f8bfdc9}{crea\-Rotate\-X} (const float radians\-X)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_a56c4b3216261eeca605f5eaff484f507}{crea\-Rotate\-Y} (const float radians\-Y)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_aef68de02af8fec6c336b3c8cf6e9f1b0}{crea\-Rotate\-Z} (const float radians\-Z)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_abdfe3c4ff1ea760ce109e6c6931407b4}{crea\-Rotate\-Z\-Y\-X} (const float radians\-Z, const float radians\-Y, const float radians\-X)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_a86a6d522382fea9f569358f367340e02}{crea\-Rotate\-Z\-Y\-X} (\hyperlink{classVectF3}{Vect\-F3} const \&rotate\-Z\-Y\-X)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_a33c9f1a0bec978be5d2f91a66cded741}{crea\-Look\-At\-L\-H} (\hyperlink{classVectF3}{Vect\-F3} const \&camera\-Pos, \hyperlink{classVectF3}{Vect\-F3} const \&target\-Pos, \hyperlink{classVectF3}{Vect\-F3} const \&up\-Vector)
+\item 
+static \hyperlink{classMatrixF4}{Matrix\-F4} \hyperlink{classMatrixTransform_a9ee4b294198e3b4e94e6497819ab2f29}{crea\-Perspective\-Fov\-L\-H} (const float radians\-Fov, const float screen\-Width, const float screen\-Height, const float near, const float far)
+\item 
+static \hyperlink{classVectF3}{Vect\-F3} \hyperlink{classMatrixTransform_a1f3062abab7dad5f82b9dc2ed3ab3f0b}{project\-On\-Screen} (\hyperlink{classVectF3}{Vect\-F3} const \&point3\-D, \hyperlink{classMatrixF4}{Matrix\-F4} const \&matrix\-Transform, const int screen\-Width, const int screen\-Height)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class that defines matrix utilities for transformations. Meant to be used for operation like scaling, rotation, translation, look\-At... (Specially with matrix 4x4).
+
+\begin{DoxyRemark}{Remarks}
+Matrix multiplication use 'Column vector' transformation. Meaning that M1 $\ast$ M2 $\ast$ M3 $\ast$ Vect will be actually (M1 $\ast$ (M2 $\ast$ (M3 $\ast$ Vect))). This change the structure of transform matrix. For instance, translate matrix as tx, ty, and tz in the last column. (In 'Row vector' multiplication, it is on the last row).
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classMatrixF4}{Matrix\-F4} class for several information (Read class documentation).
+\end{DoxySeeAlso}
+\begin{DoxyRemark}{Remarks}
+For further informations about matrix transformations, some useful links.
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{See Also}
+\href{http://www.codinglabs.net/article_world_view_projection_matrix.aspx}{\tt http\-://www.\-codinglabs.\-net/article\-\_\-world\-\_\-view\-\_\-projection\-\_\-matrix.\-aspx} 
+
+\href{https://web.archive.org/web/20131222170415/http:/robertokoci.com/world-view-projection-matrix-unveiled/}{\tt https\-://web.\-archive.\-org/web/20131222170415/http\-:/robertokoci.\-com/world-\/view-\/projection-\/matrix-\/unveiled/} 
+
+\href{http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/}{\tt http\-://www.\-opengl-\/tutorial.\-org/beginners-\/tutorials/tutorial-\/3-\/matrices/} 
+
+\href{http://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/building-basic-perspective-projection-matrix}{\tt http\-://www.\-scratchapixel.\-com/lessons/3d-\/basic-\/rendering/perspective-\/and-\/orthographic-\/projection-\/matrix/building-\/basic-\/perspective-\/projection-\/matrix}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Constantin Masson 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMatrixTransform_a33c9f1a0bec978be5d2f91a66cded741}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Look\-At\-L\-H@{crea\-Look\-At\-L\-H}}
+\index{crea\-Look\-At\-L\-H@{crea\-Look\-At\-L\-H}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Look\-At\-L\-H}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Look\-At\-L\-H (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{camera\-Pos, }
+\item[{{\bf Vect\-F3} const \&}]{target\-Pos, }
+\item[{{\bf Vect\-F3} const \&}]{up\-Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_a33c9f1a0bec978be5d2f91a66cded741}
+Create a left-\/handed (L\-H) Look\-At matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera\-Pos} & Position of the camera (Eye point). \\
+\hline
+{\em target\-Pos} & Position of a point camera is pointing toward. \\
+\hline
+{\em up\-Vector} & The up vector for current world. (Generally 0,1,0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The left-\/handed look\-At matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_a33c9f1a0bec978be5d2f91a66cded741_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixTransform_a9ee4b294198e3b4e94e6497819ab2f29}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Perspective\-Fov\-L\-H@{crea\-Perspective\-Fov\-L\-H}}
+\index{crea\-Perspective\-Fov\-L\-H@{crea\-Perspective\-Fov\-L\-H}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Perspective\-Fov\-L\-H}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Perspective\-Fov\-L\-H (
+\begin{DoxyParamCaption}
+\item[{const float}]{radians\-Fov, }
+\item[{const float}]{screen\-Width, }
+\item[{const float}]{screen\-Height, }
+\item[{const float}]{near, }
+\item[{const float}]{far}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_a9ee4b294198e3b4e94e6497819ab2f29}
+Create a left-\/handed (L\-H) perspective projection matrix.
+
+The viewed scene is a frustum defined by the Fov angle and the depth distances (Near and far). The field of view (Fov) is the angle the camera see the scene.
+
+
+\begin{DoxyParams}{Parameters}
+{\em radians\-Fov} & \hyperlink{classCamera}{Camera} scene angle in radians (Must be positive). \\
+\hline
+{\em screen\-Width} & Screen width in pixels. \\
+\hline
+{\em screen\-Height} & Screen height in pixels. \\
+\hline
+{\em near} & Nearest distance camera can see (Must be positive). \\
+\hline
+{\em far} & Farther distance camera can see (Must be positive). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The left-\/handed perspective matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_a9ee4b294198e3b4e94e6497819ab2f29_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixTransform_af5fcb785703e6b6a9a7744320f8bfdc9}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Rotate\-X@{crea\-Rotate\-X}}
+\index{crea\-Rotate\-X@{crea\-Rotate\-X}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Rotate\-X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Rotate\-X (
+\begin{DoxyParamCaption}
+\item[{const float}]{radians\-X}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_af5fcb785703e6b6a9a7744320f8bfdc9}
+Create a rotation matrix on the x axe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em radians\-X} & The x rotation in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new rotation matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_af5fcb785703e6b6a9a7744320f8bfdc9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_af5fcb785703e6b6a9a7744320f8bfdc9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixTransform_a56c4b3216261eeca605f5eaff484f507}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Rotate\-Y@{crea\-Rotate\-Y}}
+\index{crea\-Rotate\-Y@{crea\-Rotate\-Y}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Rotate\-Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Rotate\-Y (
+\begin{DoxyParamCaption}
+\item[{const float}]{radians\-Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_a56c4b3216261eeca605f5eaff484f507}
+Create a rotation matrix on the y axe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em radians\-Y} & The y rotation angle in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new rotation matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_a56c4b3216261eeca605f5eaff484f507_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_a56c4b3216261eeca605f5eaff484f507_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixTransform_aef68de02af8fec6c336b3c8cf6e9f1b0}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Rotate\-Z@{crea\-Rotate\-Z}}
+\index{crea\-Rotate\-Z@{crea\-Rotate\-Z}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Rotate\-Z}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Rotate\-Z (
+\begin{DoxyParamCaption}
+\item[{const float}]{radians\-Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_aef68de02af8fec6c336b3c8cf6e9f1b0}
+Create a rotation matrix on the z axe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em radians\-Z} & The z rotation angle in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new rotation matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_aef68de02af8fec6c336b3c8cf6e9f1b0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_aef68de02af8fec6c336b3c8cf6e9f1b0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixTransform_abdfe3c4ff1ea760ce109e6c6931407b4}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Rotate\-Z\-Y\-X@{crea\-Rotate\-Z\-Y\-X}}
+\index{crea\-Rotate\-Z\-Y\-X@{crea\-Rotate\-Z\-Y\-X}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Rotate\-Z\-Y\-X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Rotate\-Z\-Y\-X (
+\begin{DoxyParamCaption}
+\item[{const float}]{radians\-Z, }
+\item[{const float}]{radians\-Y, }
+\item[{const float}]{radians\-X}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_abdfe3c4ff1ea760ce109e6c6931407b4}
+Create a rotation matrix on the 3 axes. It use the Yaw-\/\-Pitch-\/\-Roll order.
+
+\begin{DoxyNote}{Note}
+To learn more about, search for information about \char`\"{}\-Converting Euler Angles to a Rotation Matrix\char`\"{}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See Also}
+\href{http://danceswithcode.net/engineeringnotes/rotations_in_3d/rotations_in_3d_part1.html}{\tt http\-://danceswithcode.\-net/engineeringnotes/rotations\-\_\-in\-\_\-3d/rotations\-\_\-in\-\_\-3d\-\_\-part1.\-html}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em radians\-Z} & The z rotation angle in radians. (Yaw) \\
+\hline
+{\em radians\-Y} & The y rotation angle in radians. (Pitch) \\
+\hline
+{\em radians\-X} & The x rotation angle in radians. (Roll) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new rotation matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_abdfe3c4ff1ea760ce109e6c6931407b4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_abdfe3c4ff1ea760ce109e6c6931407b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixTransform_a86a6d522382fea9f569358f367340e02}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Rotate\-Z\-Y\-X@{crea\-Rotate\-Z\-Y\-X}}
+\index{crea\-Rotate\-Z\-Y\-X@{crea\-Rotate\-Z\-Y\-X}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Rotate\-Z\-Y\-X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Rotate\-Z\-Y\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{rotate\-Z\-Y\-X}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_a86a6d522382fea9f569358f367340e02}
+Create a rotation matrix on the 3 axes. It use the Yaw-\/\-Pitch-\/\-Roll order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rotate\-Z\-Y\-X} & Vector that represents the Yaw\-Pitch\-Roll rotation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new rotation matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_a86a6d522382fea9f569358f367340e02_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixTransform_a251c796e40b87980c32a0f142b1eb462}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Scale@{crea\-Scale}}
+\index{crea\-Scale@{crea\-Scale}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Scale (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{scale\-X\-Y\-Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_a251c796e40b87980c32a0f142b1eb462}
+Create a scale matrix from given vector values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale\-X\-Y\-Z} & The vector with scale values (tx, ty, tz). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New scale matrix. 
+\end{DoxyReturn}
+\hypertarget{classMatrixTransform_a3492c829cb4bced544895c76ab1ca57a}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Scale@{crea\-Scale}}
+\index{crea\-Scale@{crea\-Scale}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Scale (
+\begin{DoxyParamCaption}
+\item[{const float}]{scale\-X, }
+\item[{const float}]{scale\-Y, }
+\item[{const float}]{scale\-Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_a3492c829cb4bced544895c76ab1ca57a}
+Create a scale matrix from given factors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale\-X} & The x scale factor. \\
+\hline
+{\em scale\-Y} & The y scale factor. \\
+\hline
+{\em scale\-Z} & The z scale factor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New scale matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_a3492c829cb4bced544895c76ab1ca57a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixTransform_a8dd2a9299ec647734bac7b102ca587a8}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Translate@{crea\-Translate}}
+\index{crea\-Translate@{crea\-Translate}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Translate (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{translate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_a8dd2a9299ec647734bac7b102ca587a8}
+Create a translation matrix from the given vector.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classMatrixTransform}{Matrix\-Transform} For more information about internal representation.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em translate} & The translation vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New translation matrix. 
+\end{DoxyReturn}
+\hypertarget{classMatrixTransform_a0876b127542db4f6d37ab5df59f25dd2}{\index{Matrix\-Transform@{Matrix\-Transform}!crea\-Translate@{crea\-Translate}}
+\index{crea\-Translate@{crea\-Translate}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{crea\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F4} Matrix\-Transform\-::crea\-Translate (
+\begin{DoxyParamCaption}
+\item[{const float}]{translate\-X, }
+\item[{const float}]{translate\-Y, }
+\item[{const float}]{translate\-Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_a0876b127542db4f6d37ab5df59f25dd2}
+Create a translation matrix with the given factors.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classMatrixTransform}{Matrix\-Transform} For more information about internal representation.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em translate\-X} & The x translation value. \\
+\hline
+{\em translate\-Y} & The y translation value. \\
+\hline
+{\em translate\-Z} & The z translation value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New translation matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrixTransform_a0876b127542db4f6d37ab5df59f25dd2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixTransform_a1f3062abab7dad5f82b9dc2ed3ab3f0b}{\index{Matrix\-Transform@{Matrix\-Transform}!project\-On\-Screen@{project\-On\-Screen}}
+\index{project\-On\-Screen@{project\-On\-Screen}!MatrixTransform@{Matrix\-Transform}}
+\subsubsection[{project\-On\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Matrix\-Transform\-::project\-On\-Screen (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{point3\-D, }
+\item[{{\bf Matrix\-F4} const \&}]{matrix\-Transform, }
+\item[{const int}]{screen\-Width, }
+\item[{const int}]{screen\-Height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixTransform_a1f3062abab7dad5f82b9dc2ed3ab3f0b}
+Project a 3\-D point into a 2\-D screen. Resulting point is a 3\-D vector (x, y, z) with z is the Z-\/\-Buffering.
+
+\begin{DoxyNote}{Note}
+The screen use the common upper-\/left corner as 0\-:0. Y coordinates are going down.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em point3\-D} & The point to project. \\
+\hline
+{\em matrix\-Transform} & Transformation matrix to apply \\
+\hline
+{\em screen\-Width} & The screen width in pixels. \\
+\hline
+{\em screen\-Height} & The screen height in pixels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Projected point on the screen. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classMatrixTransform_a1f3062abab7dad5f82b9dc2ed3ab3f0b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/math/\hyperlink{MatrixTransform_8h}{Matrix\-Transform.\-h}\item 
+include/math/\hyperlink{MatrixTransform_8inl}{Matrix\-Transform.\-inl}\end{DoxyCompactItemize}

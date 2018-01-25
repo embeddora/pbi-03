@@ -1,0 +1,929 @@
+\hypertarget{classVectF3}{\section{Vect\-F3 Class Reference}
+\label{classVectF3}\index{Vect\-F3@{Vect\-F3}}
+}
+
+
+{\ttfamily \#include $<$Vect\-F3.\-h$>$}
+
+
+
+Collaboration diagram for Vect\-F3\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classVectF3__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVectF3_a191c9d30e4a55e4431176ab2c40ee1fe}{Vect\-F3} ()
+\item 
+\hyperlink{classVectF3_a05186d7ee44cd4a8400218543376572f}{Vect\-F3} (const float \hyperlink{classVectF3_a1ec0a761f0461ca38f1ca57cf095f6fa}{x}, const float \hyperlink{classVectF3_a8331d1adee2ca04fdcd3f5fa4e133896}{y}, const float \hyperlink{classVectF3_a6ada1ce72aa27f56e4b529a28c0789c4}{z})
+\item 
+\hyperlink{classVectF3_a2a9f11ad40f722d57b62d3485279b2da}{Vect\-F3} (const float s)
+\item 
+float \hyperlink{classVectF3_aac7eefb77c7bafb1fa50b57be7557edb}{length} () const 
+\item 
+float \hyperlink{classVectF3_afdfea02aa84afa5c4cfbf96854c12c1c}{square\-Length} () const 
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_a6af7e576967bc073f3a3d9ec19396c4b}{get\-Normal\-Fast} () const 
+\item 
+void \hyperlink{classVectF3_a24ac68c96a8d3eeabef0cdad6f651cd3}{normalize\-Fast} ()
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_a27d481332ac479ce755588397d906d0c}{get\-Cross\-Product} (\hyperlink{classVectF3}{Vect\-F3} const \&v) const 
+\item 
+void \hyperlink{classVectF3_aaa9e69d486f62f2f9104fd76c2048954}{set} (float const \hyperlink{classVectF3_a1ec0a761f0461ca38f1ca57cf095f6fa}{x}, float const \hyperlink{classVectF3_a8331d1adee2ca04fdcd3f5fa4e133896}{y}, float const \hyperlink{classVectF3_a6ada1ce72aa27f56e4b529a28c0789c4}{z})
+\item 
+void \hyperlink{classVectF3_aaba2493a2373fed0af1b9a05db9cf81e}{set} (\hyperlink{classVectF3}{Vect\-F3} const \&v)
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_a175e1794da184b80cf3193948291b308}{operator$\ast$} (float const s) const 
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_afe1210be66728deacaba637c0b14c969}{operator$\ast$} (\hyperlink{classVectF3}{Vect\-F3} const \&v) const 
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_a590877e276afb23e2473026753e0d826}{operator/} (float const s) const 
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_a3b001c4469b3f08ab93248301a249c12}{operator/} (\hyperlink{classVectF3}{Vect\-F3} const \&v) const 
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_a0e5ed7dd31edec3f1490810abb6630a5}{operator+} (float const s) const 
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_a756f3e07f2004684c1a93412d88e870f}{operator+} (\hyperlink{classVectF3}{Vect\-F3} const \&v) const 
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_ad2b42fd072e26afd4c58693f77dd3a4e}{operator-\/} (float const s) const 
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_aba35d4c9e63eb0ce0dee06bc8cddb0fb}{operator-\/} (\hyperlink{classVectF3}{Vect\-F3} const \&v) const 
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \& \hyperlink{classVectF3_a8fa970fb8d7154293f927f523609aae3}{operator$\ast$=} (float const s)
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \& \hyperlink{classVectF3_a6250da7c1a76aea064c5dfa1a9f4565e}{operator$\ast$=} (\hyperlink{classVectF3}{Vect\-F3} const \&v)
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \& \hyperlink{classVectF3_a10476b715cf521223892b7ea2b49e251}{operator/=} (float const s)
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \& \hyperlink{classVectF3_a8646feccd87df6c421842c6ecdde5fa6}{operator/=} (\hyperlink{classVectF3}{Vect\-F3} const \&v)
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \& \hyperlink{classVectF3_a1d3ef5d26e2c42b93d6b39e6fa77b6a2}{operator+=} (\hyperlink{classVectF3}{Vect\-F3} const \&v)
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \& \hyperlink{classVectF3_aaebe42eb83dfc17cfa1b68d74ca12086}{operator+=} (float const s)
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \& \hyperlink{classVectF3_a777668af4c546e9889a0377d5f4222c9}{operator-\/=} (float const s)
+\item 
+\hyperlink{classVectF3}{Vect\-F3} \& \hyperlink{classVectF3_a738cd1ed5f917944c77f38228c085473}{operator-\/=} (\hyperlink{classVectF3}{Vect\-F3} const \&v)
+\item 
+bool \hyperlink{classVectF3_aad9ed0e5168ea5890d65445fc599028e}{operator==} (\hyperlink{classVectF3}{Vect\-F3} const \&v) const 
+\item 
+bool \hyperlink{classVectF3_a66c0ca7498880a6ebfc1c44d92bbb35e}{operator!=} (\hyperlink{classVectF3}{Vect\-F3} const \&v) const 
+\item 
+float \hyperlink{classVectF3_ab9c4c757a1cc8871e30337a8c2cf04cc}{operator\mbox{[}$\,$\mbox{]}} (const size\-\_\-t index) const 
+\item 
+float \& \hyperlink{classVectF3_a7bd79d6f811f748b4d0d7d41766f075d}{operator\mbox{[}$\,$\mbox{]}} (const size\-\_\-t index)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \hyperlink{classVectF3_a0baf086ff969abd4a0adad08929c64ed}{dot\-Product} (\hyperlink{classVectF3}{Vect\-F3} const \&v1, \hyperlink{classVectF3}{Vect\-F3} const \&v2)
+\item 
+static \hyperlink{classVectF3}{Vect\-F3} \hyperlink{classVectF3_a6713635c6cf4628e19bfaa0f3cb58174}{cross\-Product} (\hyperlink{classVectF3}{Vect\-F3} const \&v1, \hyperlink{classVectF3}{Vect\-F3} const \&v2)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>float \hyperlink{classVectF3_a1ec0a761f0461ca38f1ca57cf095f6fa}{x}\\
+\>\>float \hyperlink{classVectF3_a8331d1adee2ca04fdcd3f5fa4e133896}{y}\\
+\>\>float \hyperlink{classVectF3_a6ada1ce72aa27f56e4b529a28c0789c4}{z}\\
+\>\} \\
+\>struct \{\\
+\>\>float \hyperlink{classVectF3_ad6da306c6b16f3a84d2b96cb4824cdba}{r}\\
+\>\>float \hyperlink{classVectF3_af80eb198426897da1d9f8b3b13429c8b}{g}\\
+\>\>float \hyperlink{classVectF3_af17b78fdbc8a19c46a31144b41ff70d6}{b}\\
+\>\} \\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classVectF3_abe8f33f83ce97153932977160f9a1bd3}{operator$<$$<$} (std\-::ostream \&os, \hyperlink{classVectF3}{Vect\-F3} const \&v)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+3 Dimensions vector with floating point precision.
+
+\begin{DoxySince}{Since}
+Jun 4, 2017 
+\end{DoxySince}
+\begin{DoxyAuthor}{Author}
+Constantin M\-A\-S\-S\-O\-N 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVectF3_a191c9d30e4a55e4431176ab2c40ee1fe}{\index{Vect\-F3@{Vect\-F3}!Vect\-F3@{Vect\-F3}}
+\index{Vect\-F3@{Vect\-F3}!VectF3@{Vect\-F3}}
+\subsubsection[{Vect\-F3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Vect\-F3\-::\-Vect\-F3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a191c9d30e4a55e4431176ab2c40ee1fe}
+Create a new null vector (All components to 0). 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVectF3_a191c9d30e4a55e4431176ab2c40ee1fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a05186d7ee44cd4a8400218543376572f}{\index{Vect\-F3@{Vect\-F3}!Vect\-F3@{Vect\-F3}}
+\index{Vect\-F3@{Vect\-F3}!VectF3@{Vect\-F3}}
+\subsubsection[{Vect\-F3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Vect\-F3\-::\-Vect\-F3 (
+\begin{DoxyParamCaption}
+\item[{const float}]{x, }
+\item[{const float}]{y, }
+\item[{const float}]{z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classVectF3_a05186d7ee44cd4a8400218543376572f}
+Create initialized vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x value to set. \\
+\hline
+{\em y} & The y value to set. \\
+\hline
+{\em z} & The z value to set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVectF3_a2a9f11ad40f722d57b62d3485279b2da}{\index{Vect\-F3@{Vect\-F3}!Vect\-F3@{Vect\-F3}}
+\index{Vect\-F3@{Vect\-F3}!VectF3@{Vect\-F3}}
+\subsubsection[{Vect\-F3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Vect\-F3\-::\-Vect\-F3 (
+\begin{DoxyParamCaption}
+\item[{const float}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classVectF3_a2a9f11ad40f722d57b62d3485279b2da}
+Create initialized vector. Each components are set with the given value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Value to set for all components. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVectF3_a6713635c6cf4628e19bfaa0f3cb58174}{\index{Vect\-F3@{Vect\-F3}!cross\-Product@{cross\-Product}}
+\index{cross\-Product@{cross\-Product}!VectF3@{Vect\-F3}}
+\subsubsection[{cross\-Product}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::cross\-Product (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v1, }
+\item[{{\bf Vect\-F3} const \&}]{v2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classVectF3_a6713635c6cf4628e19bfaa0f3cb58174}
+Gets the Cross Product of 2 vectors. (a.\-k.\-a vector product or outer product).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & Vector 1. \\
+\hline
+{\em v2} & Vector 2. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Vector cross product (v1 x v2). 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classVectF3_a6713635c6cf4628e19bfaa0f3cb58174_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVectF3_a6713635c6cf4628e19bfaa0f3cb58174_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a0baf086ff969abd4a0adad08929c64ed}{\index{Vect\-F3@{Vect\-F3}!dot\-Product@{dot\-Product}}
+\index{dot\-Product@{dot\-Product}!VectF3@{Vect\-F3}}
+\subsubsection[{dot\-Product}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} float Vect\-F3\-::dot\-Product (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v1, }
+\item[{{\bf Vect\-F3} const \&}]{v2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classVectF3_a0baf086ff969abd4a0adad08929c64ed}
+Gets the Dot Product of 2 vectors. (a.\-k.\-a scalar product or inner product).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & Vector 1. \\
+\hline
+{\em v2} & Vector 2. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product (v1.\-v2). 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVectF3_a0baf086ff969abd4a0adad08929c64ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a27d481332ac479ce755588397d906d0c}{\index{Vect\-F3@{Vect\-F3}!get\-Cross\-Product@{get\-Cross\-Product}}
+\index{get\-Cross\-Product@{get\-Cross\-Product}!VectF3@{Vect\-F3}}
+\subsubsection[{get\-Cross\-Product}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::get\-Cross\-Product (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_a27d481332ac479ce755588397d906d0c}
+Gets Cross Product of this vector with another. (a.\-k.\-a vector product or outer product).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to cross with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Vector cross product (this x other). 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classVectF3_a27d481332ac479ce755588397d906d0c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a6af7e576967bc073f3a3d9ec19396c4b}{\index{Vect\-F3@{Vect\-F3}!get\-Normal\-Fast@{get\-Normal\-Fast}}
+\index{get\-Normal\-Fast@{get\-Normal\-Fast}!VectF3@{Vect\-F3}}
+\subsubsection[{get\-Normal\-Fast}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::get\-Normal\-Fast (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_a6af7e576967bc073f3a3d9ec19396c4b}
+Returns a normalized copy of this vector.
+
+\begin{DoxyWarning}{Warning}
+If vector length is zero, a division by zero appears. Since floating point division by 0, vector is filled with 'infinite'. Not verification is done for performance. (Hence 'fast')
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+The new normalized vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVectF3_a6af7e576967bc073f3a3d9ec19396c4b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_aac7eefb77c7bafb1fa50b57be7557edb}{\index{Vect\-F3@{Vect\-F3}!length@{length}}
+\index{length@{length}!VectF3@{Vect\-F3}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} float Vect\-F3\-::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_aac7eefb77c7bafb1fa50b57be7557edb}
+Gets the length of this vector.
+
+\begin{DoxyReturn}{Returns}
+The length (Magnitude) of this vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classVectF3_aac7eefb77c7bafb1fa50b57be7557edb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVectF3_aac7eefb77c7bafb1fa50b57be7557edb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a24ac68c96a8d3eeabef0cdad6f651cd3}{\index{Vect\-F3@{Vect\-F3}!normalize\-Fast@{normalize\-Fast}}
+\index{normalize\-Fast@{normalize\-Fast}!VectF3@{Vect\-F3}}
+\subsubsection[{normalize\-Fast}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} void Vect\-F3\-::normalize\-Fast (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a24ac68c96a8d3eeabef0cdad6f651cd3}
+Normalize this vector in place.
+
+\begin{DoxyWarning}{Warning}
+If vector length is zero, a division by zero appears. Since floating point division by 0, vector is filled with 'infinite'. Not verification is done for performance. (Hence 'fast') 
+\end{DoxyWarning}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVectF3_a24ac68c96a8d3eeabef0cdad6f651cd3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVectF3_a24ac68c96a8d3eeabef0cdad6f651cd3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a66c0ca7498880a6ebfc1c44d92bbb35e}{\index{Vect\-F3@{Vect\-F3}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!VectF3@{Vect\-F3}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} bool Vect\-F3\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_a66c0ca7498880a6ebfc1c44d92bbb35e}
+Checks inequality of the 2 vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if not equal, otherwise, return false. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_a175e1794da184b80cf3193948291b308}{\index{Vect\-F3@{Vect\-F3}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!VectF3@{Vect\-F3}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_a175e1794da184b80cf3193948291b308}
+Returns the multiplication of each this components by a scalar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Scalar to apply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new Vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classVectF3_a175e1794da184b80cf3193948291b308_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_afe1210be66728deacaba637c0b14c969}{\index{Vect\-F3@{Vect\-F3}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!VectF3@{Vect\-F3}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_afe1210be66728deacaba637c0b14c969}
+Returns the multiplication of this by another vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classVectF3_afe1210be66728deacaba637c0b14c969_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a8fa970fb8d7154293f927f523609aae3}{\index{Vect\-F3@{Vect\-F3}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!VectF3@{Vect\-F3}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} \& Vect\-F3\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a8fa970fb8d7154293f927f523609aae3}
+Multiplies this by a scalar.
+
+param s The scalar value. \begin{DoxyReturn}{Returns}
+Reference to the current vector after multiplication. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_a6250da7c1a76aea064c5dfa1a9f4565e}{\index{Vect\-F3@{Vect\-F3}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!VectF3@{Vect\-F3}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} \& Vect\-F3\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a6250da7c1a76aea064c5dfa1a9f4565e}
+Multiplies this by a vector.
+
+param v The other vector. \begin{DoxyReturn}{Returns}
+Reference to the current vector after calculation. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_a0e5ed7dd31edec3f1490810abb6630a5}{\index{Vect\-F3@{Vect\-F3}!operator+@{operator+}}
+\index{operator+@{operator+}!VectF3@{Vect\-F3}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_a0e5ed7dd31edec3f1490810abb6630a5}
+Returns the addition of each this components by a scalar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Scalar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classVectF3_a0e5ed7dd31edec3f1490810abb6630a5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a756f3e07f2004684c1a93412d88e870f}{\index{Vect\-F3@{Vect\-F3}!operator+@{operator+}}
+\index{operator+@{operator+}!VectF3@{Vect\-F3}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_a756f3e07f2004684c1a93412d88e870f}
+Returns a new vector addition of this vector with v.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classVectF3_a756f3e07f2004684c1a93412d88e870f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a1d3ef5d26e2c42b93d6b39e6fa77b6a2}{\index{Vect\-F3@{Vect\-F3}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!VectF3@{Vect\-F3}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} \& Vect\-F3\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a1d3ef5d26e2c42b93d6b39e6fa77b6a2}
+Adds a vector to this.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the current vector after addition. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_aaebe42eb83dfc17cfa1b68d74ca12086}{\index{Vect\-F3@{Vect\-F3}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!VectF3@{Vect\-F3}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} \& Vect\-F3\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_aaebe42eb83dfc17cfa1b68d74ca12086}
+Adds a scalar to each this components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Scalar value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the current vector after addition. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_ad2b42fd072e26afd4c58693f77dd3a4e}{\index{Vect\-F3@{Vect\-F3}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!VectF3@{Vect\-F3}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_ad2b42fd072e26afd4c58693f77dd3a4e}
+Returns the subtraction of each this components by a scalar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Scalar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classVectF3_ad2b42fd072e26afd4c58693f77dd3a4e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_aba35d4c9e63eb0ce0dee06bc8cddb0fb}{\index{Vect\-F3@{Vect\-F3}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!VectF3@{Vect\-F3}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_aba35d4c9e63eb0ce0dee06bc8cddb0fb}
+Returns a new vector subtraction of this vector by v.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classVectF3_aba35d4c9e63eb0ce0dee06bc8cddb0fb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a777668af4c546e9889a0377d5f4222c9}{\index{Vect\-F3@{Vect\-F3}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!VectF3@{Vect\-F3}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} \& Vect\-F3\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a777668af4c546e9889a0377d5f4222c9}
+Subtracts a scalar to each this components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Scalar value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the current vector after subtraction. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_a738cd1ed5f917944c77f38228c085473}{\index{Vect\-F3@{Vect\-F3}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!VectF3@{Vect\-F3}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} \& Vect\-F3\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a738cd1ed5f917944c77f38228c085473}
+Subtracts a vector to this.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the current vector after subtraction. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_a590877e276afb23e2473026753e0d826}{\index{Vect\-F3@{Vect\-F3}!operator/@{operator/}}
+\index{operator/@{operator/}!VectF3@{Vect\-F3}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::operator/ (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_a590877e276afb23e2473026753e0d826}
+Returns the division of each this components by a scalar.
+
+\begin{DoxyWarning}{Warning}
+If scalar is zero, a division by zero appears. Since floating point division by 0, vector is filled with 'infinite'. Not verification is done for performance. (Hence 'fast')
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to divide with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classVectF3_a590877e276afb23e2473026753e0d826_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a3b001c4469b3f08ab93248301a249c12}{\index{Vect\-F3@{Vect\-F3}!operator/@{operator/}}
+\index{operator/@{operator/}!VectF3@{Vect\-F3}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} Vect\-F3\-::operator/ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_a3b001c4469b3f08ab93248301a249c12}
+Returns the division of this components by another vector.
+
+\begin{DoxyWarning}{Warning}
+If other vector has a zero component, a division by zero appears. Since floating point division by 0, vector is filled with 'infinite'. Not verification is done for performance. (Hence 'fast')
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new vector. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classVectF3_a3b001c4469b3f08ab93248301a249c12_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_a10476b715cf521223892b7ea2b49e251}{\index{Vect\-F3@{Vect\-F3}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!VectF3@{Vect\-F3}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} \& Vect\-F3\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{float const}]{s}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a10476b715cf521223892b7ea2b49e251}
+Divides this by a scalar.
+
+\begin{DoxyWarning}{Warning}
+If scalar is zero, a division by zero appears. Since floating point division by 0, vector is filled with 'infinite'. Not verification is done for performance. (Hence 'fast')
+\end{DoxyWarning}
+param s The scalar value. \begin{DoxyReturn}{Returns}
+Reference to the current vector after division. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_a8646feccd87df6c421842c6ecdde5fa6}{\index{Vect\-F3@{Vect\-F3}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!VectF3@{Vect\-F3}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Vect\-F3} \& Vect\-F3\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a8646feccd87df6c421842c6ecdde5fa6}
+Divides this by a vector.
+
+\begin{DoxyWarning}{Warning}
+If other vector has a zero component, a division by zero appears. Since floating point division by 0, vector is filled with 'infinite'. Not verification is done for performance. (Hence 'fast')
+\end{DoxyWarning}
+param v The other vector. \begin{DoxyReturn}{Returns}
+Reference to the current vector after calculation. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_aad9ed0e5168ea5890d65445fc599028e}{\index{Vect\-F3@{Vect\-F3}!operator==@{operator==}}
+\index{operator==@{operator==}!VectF3@{Vect\-F3}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} bool Vect\-F3\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_aad9ed0e5168ea5890d65445fc599028e}
+Checks equality of 2 vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both vectors have same component values, otherwise, return false. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_ab9c4c757a1cc8871e30337a8c2cf04cc}{\index{Vect\-F3@{Vect\-F3}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!VectF3@{Vect\-F3}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} float Vect\-F3\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_ab9c4c757a1cc8871e30337a8c2cf04cc}
+Gets a copy of the component at requested position.
+
+\begin{DoxyWarning}{Warning}
+Index must be in range, otherwise this function will crash. For performance raison, no check is done.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+Copy of component v\mbox{[}index\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_a7bd79d6f811f748b4d0d7d41766f075d}{\index{Vect\-F3@{Vect\-F3}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!VectF3@{Vect\-F3}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} float \& Vect\-F3\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_a7bd79d6f811f748b4d0d7d41766f075d}
+Gets a reference to the component at requested position.
+
+\begin{DoxyWarning}{Warning}
+Index must be in range, otherwise this function will crash. For performance raison, no check is done.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+Reference to component v\mbox{[}index\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{classVectF3_aaa9e69d486f62f2f9104fd76c2048954}{\index{Vect\-F3@{Vect\-F3}!set@{set}}
+\index{set@{set}!VectF3@{Vect\-F3}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} void Vect\-F3\-::set (
+\begin{DoxyParamCaption}
+\item[{float const}]{x, }
+\item[{float const}]{y, }
+\item[{float const}]{z}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_aaa9e69d486f62f2f9104fd76c2048954}
+Sets all axis values of this.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & New x coordinate. \\
+\hline
+{\em y} & New y coordinate. \\
+\hline
+{\em z} & New z coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVectF3_aaa9e69d486f62f2f9104fd76c2048954_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classVectF3_aaba2493a2373fed0af1b9a05db9cf81e}{\index{Vect\-F3@{Vect\-F3}!set@{set}}
+\index{set@{set}!VectF3@{Vect\-F3}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} void Vect\-F3\-::set (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classVectF3_aaba2493a2373fed0af1b9a05db9cf81e}
+Copy values of the given vector in this.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to use as copy. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVectF3_afdfea02aa84afa5c4cfbf96854c12c1c}{\index{Vect\-F3@{Vect\-F3}!square\-Length@{square\-Length}}
+\index{square\-Length@{square\-Length}!VectF3@{Vect\-F3}}
+\subsubsection[{square\-Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} float Vect\-F3\-::square\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVectF3_afdfea02aa84afa5c4cfbf96854c12c1c}
+Gets the square length of this vector.
+
+\begin{DoxyReturn}{Returns}
+The square length (Magnitude) of this vector. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVectF3_afdfea02aa84afa5c4cfbf96854c12c1c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classVectF3_abe8f33f83ce97153932977160f9a1bd3}{\index{Vect\-F3@{Vect\-F3}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!VectF3@{Vect\-F3}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{{\bf Vect\-F3} const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classVectF3_abe8f33f83ce97153932977160f9a1bd3}
+Writes a simple string representation of the vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Stream where to write. \\
+\hline
+{\em v} & Vector print. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classVectF3_adeb5b5512ad9e2cab8c48eeaefa2d078}{\subsubsection[{"@1}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}\label{classVectF3_adeb5b5512ad9e2cab8c48eeaefa2d078}
+\hypertarget{classVectF3_af17b78fdbc8a19c46a31144b41ff70d6}{\index{Vect\-F3@{Vect\-F3}!b@{b}}
+\index{b@{b}!VectF3@{Vect\-F3}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}float Vect\-F3\-::b}}\label{classVectF3_af17b78fdbc8a19c46a31144b41ff70d6}
+\hypertarget{classVectF3_af80eb198426897da1d9f8b3b13429c8b}{\index{Vect\-F3@{Vect\-F3}!g@{g}}
+\index{g@{g}!VectF3@{Vect\-F3}}
+\subsubsection[{g}]{\setlength{\rightskip}{0pt plus 5cm}float Vect\-F3\-::g}}\label{classVectF3_af80eb198426897da1d9f8b3b13429c8b}
+\hypertarget{classVectF3_ad6da306c6b16f3a84d2b96cb4824cdba}{\index{Vect\-F3@{Vect\-F3}!r@{r}}
+\index{r@{r}!VectF3@{Vect\-F3}}
+\subsubsection[{r}]{\setlength{\rightskip}{0pt plus 5cm}float Vect\-F3\-::r}}\label{classVectF3_ad6da306c6b16f3a84d2b96cb4824cdba}
+\hypertarget{classVectF3_a1ec0a761f0461ca38f1ca57cf095f6fa}{\index{Vect\-F3@{Vect\-F3}!x@{x}}
+\index{x@{x}!VectF3@{Vect\-F3}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}float Vect\-F3\-::x}}\label{classVectF3_a1ec0a761f0461ca38f1ca57cf095f6fa}
+\hypertarget{classVectF3_a8331d1adee2ca04fdcd3f5fa4e133896}{\index{Vect\-F3@{Vect\-F3}!y@{y}}
+\index{y@{y}!VectF3@{Vect\-F3}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}float Vect\-F3\-::y}}\label{classVectF3_a8331d1adee2ca04fdcd3f5fa4e133896}
+\hypertarget{classVectF3_a6ada1ce72aa27f56e4b529a28c0789c4}{\index{Vect\-F3@{Vect\-F3}!z@{z}}
+\index{z@{z}!VectF3@{Vect\-F3}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}float Vect\-F3\-::z}}\label{classVectF3_a6ada1ce72aa27f56e4b529a28c0789c4}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/math/\hyperlink{VectF3_8h}{Vect\-F3.\-h}\item 
+include/math/\hyperlink{VectF3_8inl}{Vect\-F3.\-inl}\item 
+include/math/\hyperlink{VectF3__FPU_8inl}{Vect\-F3\-\_\-\-F\-P\-U.\-inl}\item 
+include/math/\hyperlink{VectF3__SSE_8inl}{Vect\-F3\-\_\-\-S\-S\-E.\-inl}\end{DoxyCompactItemize}

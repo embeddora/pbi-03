@@ -1,0 +1,203 @@
+\hypertarget{classMatrixF3}{\section{Matrix\-F3 Class Reference}
+\label{classMatrixF3}\index{Matrix\-F3@{Matrix\-F3}}
+}
+
+
+{\ttfamily \#include $<$Matrix\-F3.\-h$>$}
+
+
+
+Collaboration diagram for Matrix\-F3\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classMatrixF3__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMatrixF3_a9bf84616518690c8c179506fac8f3fdc}{Matrix\-F3} ()
+\item 
+\hyperlink{classMatrixF3_a24d55903aea4ba1696388169346a71f6}{Matrix\-F3} (\hyperlink{classVectF3}{Vect\-F3} const \&row1, \hyperlink{classVectF3}{Vect\-F3} const \&row2, \hyperlink{classVectF3}{Vect\-F3} const \&row3)
+\item 
+\hyperlink{classMatrixF3_a03b7c7e08c0464fcc77f3259c1eb4642}{Matrix\-F3} (const float m00, const float m01, const float m02, const float m10, const float m11, const float m12, const float m20, const float m21, const float m22)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMatrixF3}{Matrix\-F3} \hyperlink{classMatrixF3_aad53de325db6f4b2a9b4d0170edde7c5}{I\-D\-E\-N\-T\-I\-T\-Y} ()
+\item 
+static \hyperlink{classMatrixF3}{Matrix\-F3} \hyperlink{classMatrixF3_a489e82306b03ff5d69929b5f358ccdb4}{Z\-E\-R\-O} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classMatrixF3_abdc6de748007031ab31d86cc54ada59f}{\-\_\-m} \mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A 3x3 matrix with floating point precision.
+
+\begin{DoxyRemark}{Remarks}
+Matrix is stored contiguously in memory in a row fashion\-: each row contains a single vector.
+
+For further information about matrix representation\-: 
+\end{DoxyRemark}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classMatrixF4}{Matrix\-F4}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+T\-O\-D\-O\-: currently not used except to create 4x4 matrix from 3x3.
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+\-: July 24, 2017 
+\end{DoxySince}
+\begin{DoxyAuthor}{Author}
+\-: Constantin Masson 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMatrixF3_a9bf84616518690c8c179506fac8f3fdc}{\index{Matrix\-F3@{Matrix\-F3}!Matrix\-F3@{Matrix\-F3}}
+\index{Matrix\-F3@{Matrix\-F3}!MatrixF3@{Matrix\-F3}}
+\subsubsection[{Matrix\-F3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Matrix\-F3\-::\-Matrix\-F3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMatrixF3_a9bf84616518690c8c179506fac8f3fdc}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classMatrixF3_a9bf84616518690c8c179506fac8f3fdc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixF3_a24d55903aea4ba1696388169346a71f6}{\index{Matrix\-F3@{Matrix\-F3}!Matrix\-F3@{Matrix\-F3}}
+\index{Matrix\-F3@{Matrix\-F3}!MatrixF3@{Matrix\-F3}}
+\subsubsection[{Matrix\-F3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Matrix\-F3\-::\-Matrix\-F3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Vect\-F3} const \&}]{row1, }
+\item[{{\bf Vect\-F3} const \&}]{row2, }
+\item[{{\bf Vect\-F3} const \&}]{row3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMatrixF3_a24d55903aea4ba1696388169346a71f6}
+Creates a new matrix filled by 3 rows.
+
+
+\begin{DoxyParams}{Parameters}
+{\em row1} & Values for positions m\mbox{[}0\mbox{]}\mbox{[}0\mbox{]} to m\mbox{[}0\mbox{]}\mbox{[}2\mbox{]}. \\
+\hline
+{\em row2} & Values for positions m\mbox{[}1\mbox{]}\mbox{[}0\mbox{]} to m\mbox{[}1\mbox{]}\mbox{[}2\mbox{]}. \\
+\hline
+{\em row3} & Values for positions m\mbox{[}2\mbox{]}\mbox{[}0\mbox{]} to m\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMatrixF3_a03b7c7e08c0464fcc77f3259c1eb4642}{\index{Matrix\-F3@{Matrix\-F3}!Matrix\-F3@{Matrix\-F3}}
+\index{Matrix\-F3@{Matrix\-F3}!MatrixF3@{Matrix\-F3}}
+\subsubsection[{Matrix\-F3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} Matrix\-F3\-::\-Matrix\-F3 (
+\begin{DoxyParamCaption}
+\item[{const float}]{m00, }
+\item[{const float}]{m01, }
+\item[{const float}]{m02, }
+\item[{const float}]{m10, }
+\item[{const float}]{m11, }
+\item[{const float}]{m12, }
+\item[{const float}]{m20, }
+\item[{const float}]{m21, }
+\item[{const float}]{m22}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMatrixF3_a03b7c7e08c0464fcc77f3259c1eb4642}
+Creates a new matrix with each component set respectively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m00} & Component at Row 0 Column 0. \\
+\hline
+{\em m01} & Component at Row 0 Column 1. \\
+\hline
+{\em m02} & Component at Row 0 Column 2.\\
+\hline
+{\em m10} & Component at Row 1 Column 0. \\
+\hline
+{\em m11} & Component at Row 1 Column 1. \\
+\hline
+{\em m12} & Component at Row 1 Column 2.\\
+\hline
+{\em m20} & Component at Row 2 Column 0. \\
+\hline
+{\em m21} & Component at Row 2 Column 1. \\
+\hline
+{\em m22} & Component at Row 2 Column 2. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMatrixF3_aad53de325db6f4b2a9b4d0170edde7c5}{\index{Matrix\-F3@{Matrix\-F3}!I\-D\-E\-N\-T\-I\-T\-Y@{I\-D\-E\-N\-T\-I\-T\-Y}}
+\index{I\-D\-E\-N\-T\-I\-T\-Y@{I\-D\-E\-N\-T\-I\-T\-Y}!MatrixF3@{Matrix\-F3}}
+\subsubsection[{I\-D\-E\-N\-T\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F3} Matrix\-F3\-::\-I\-D\-E\-N\-T\-I\-T\-Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixF3_aad53de325db6f4b2a9b4d0170edde7c5}
+Identity matrix. Matrix filled with 1 on its diagonal.
+
+\begin{DoxyReturn}{Returns}
+New identity matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classMatrixF3_aad53de325db6f4b2a9b4d0170edde7c5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMatrixF3_a489e82306b03ff5d69929b5f358ccdb4}{\index{Matrix\-F3@{Matrix\-F3}!Z\-E\-R\-O@{Z\-E\-R\-O}}
+\index{Z\-E\-R\-O@{Z\-E\-R\-O}!MatrixF3@{Matrix\-F3}}
+\subsubsection[{Z\-E\-R\-O}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-O\-R\-C\-E\-\_\-\-I\-N\-L\-I\-N\-E} {\bf Matrix\-F3} Matrix\-F3\-::\-Z\-E\-R\-O (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMatrixF3_a489e82306b03ff5d69929b5f358ccdb4}
+Zero matrix. Matrix filled with 0 everywhere!
+
+\begin{DoxyReturn}{Returns}
+New zero matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classMatrixF3_a489e82306b03ff5d69929b5f358ccdb4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMatrixF3_abdc6de748007031ab31d86cc54ada59f}{\index{Matrix\-F3@{Matrix\-F3}!\-\_\-m@{\-\_\-m}}
+\index{\-\_\-m@{\-\_\-m}!MatrixF3@{Matrix\-F3}}
+\subsubsection[{\-\_\-m}]{\setlength{\rightskip}{0pt plus 5cm}float Matrix\-F3\-::\-\_\-m\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}}}\label{classMatrixF3_abdc6de748007031ab31d86cc54ada59f}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/math/\hyperlink{MatrixF3_8h}{Matrix\-F3.\-h}\item 
+include/math/\hyperlink{MatrixF3_8inl}{Matrix\-F3.\-inl}\end{DoxyCompactItemize}
