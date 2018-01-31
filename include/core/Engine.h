@@ -74,7 +74,7 @@ class Engine : private Singleton<Engine>
 
     private:
         // These variable are hard coded for now
-        Camera cctv; // CCTV is watching you!
+        Camera cctv;
         float depthBuffer[WINDOW_DEFAULT_SIZE_W * WINDOW_DEFAULT_SIZE_H];
 
     public:
@@ -86,7 +86,14 @@ class Engine : private Singleton<Engine>
     private:
         bool renderOneFrame();
         void renderAll(SDL_Renderer* renderer, Camera camera, std::vector<Mesh> &meshes);
+        void renderAll_xyz(SDL_Renderer* renderer, Camera camera, std::vector<Mesh> &meshes/*, float, float, float*/);
         void handleEvent(SDL_Event* sdlevent);
+
+    private:
+	int	iChanged = 0;
+	float	fX, fY, fZ;
+	float	fStep = 0.25;
+
 };
 
 #endif // #ifndef _ENGINE_H

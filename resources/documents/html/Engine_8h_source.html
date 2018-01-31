@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// These variable are hard coded for now</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classCamera.html">Camera</a> cctv; <span class="comment">// CCTV is watching you!</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classCamera.html">Camera</a> cctv;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">float</span> depthBuffer[<a class="code" href="Engine_8h.html#a217d8ec7037d879a774f4cb86aa81fbb">WINDOW_DEFAULT_SIZE_W</a> * <a class="code" href="Engine_8h.html#a0d7d1a20d7ea713514c8ed9cf4dcce10">WINDOW_DEFAULT_SIZE_H</a>];</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">public</span>:</div>
@@ -169,18 +169,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">bool</span> renderOneFrame();</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> renderAll(SDL_Renderer* renderer, <a class="code" href="classCamera.html">Camera</a> camera, std::vector&lt;Mesh&gt; &amp;meshes);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> handleEvent(SDL_Event* sdlevent);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> renderAll_xyz(SDL_Renderer* renderer, <a class="code" href="classCamera.html">Camera</a> camera, std::vector&lt;Mesh&gt; &amp;meshes<span class="comment">/*, float, float, float*/</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> handleEvent(SDL_Event* sdlevent);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif // #ifndef _ENGINE_H</span></div>
-<div class="ttc" id="classEngine_html_a350d1f9f0ddd624dc8d350b68e894507"><div class="ttname"><a href="classEngine.html#a350d1f9f0ddd624dc8d350b68e894507">Engine::startRendering</a></div><div class="ttdeci">bool startRendering()</div><div class="ttdef"><b>Definition:</b> Engine.cpp:59</div></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> iChanged = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">float</span>   fX, fY, fZ;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">float</span>   fStep = 0.25;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif // #ifndef _ENGINE_H</span></div>
+<div class="ttc" id="classEngine_html_a350d1f9f0ddd624dc8d350b68e894507"><div class="ttname"><a href="classEngine.html#a350d1f9f0ddd624dc8d350b68e894507">Engine::startRendering</a></div><div class="ttdeci">bool startRendering()</div><div class="ttdef"><b>Definition:</b> Engine.cpp:62</div></div>
 <div class="ttc" id="MeshManager_8h_html"><div class="ttname"><a href="MeshManager_8h.html">MeshManager.h</a></div></div>
 <div class="ttc" id="Camera_8h_html"><div class="ttname"><a href="Camera_8h.html">Camera.h</a></div></div>
 <div class="ttc" id="classEngine_html"><div class="ttname"><a href="classEngine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> Engine.h:61</div></div>
 <div class="ttc" id="MatrixTransform_8h_html"><div class="ttname"><a href="MatrixTransform_8h.html">MatrixTransform.h</a></div></div>
 <div class="ttc" id="AppWindowSDL2_8h_html"><div class="ttname"><a href="AppWindowSDL2_8h.html">AppWindowSDL2.h</a></div></div>
 <div class="ttc" id="Mesh_8h_html"><div class="ttname"><a href="Mesh_8h.html">Mesh.h</a></div></div>
-<div class="ttc" id="classEngine_html_ab3926379b2c80b7228465650b7597542"><div class="ttname"><a href="classEngine.html#ab3926379b2c80b7228465650b7597542">Engine::stopRendering</a></div><div class="ttdeci">bool stopRendering()</div><div class="ttdef"><b>Definition:</b> Engine.cpp:212</div></div>
+<div class="ttc" id="classEngine_html_ab3926379b2c80b7228465650b7597542"><div class="ttname"><a href="classEngine.html#ab3926379b2c80b7228465650b7597542">Engine::stopRendering</a></div><div class="ttdeci">bool stopRendering()</div><div class="ttdef"><b>Definition:</b> Engine.cpp:325</div></div>
 <div class="ttc" id="DrawSDLUtils_8h_html"><div class="ttname"><a href="DrawSDLUtils_8h.html">DrawSDLUtils.h</a></div></div>
 <div class="ttc" id="classAppWindowSDL2_html"><div class="ttname"><a href="classAppWindowSDL2.html">AppWindowSDL2</a></div><div class="ttdef"><b>Definition:</b> AppWindowSDL2.h:36</div></div>
 <div class="ttc" id="Engine_8h_html_a217d8ec7037d879a774f4cb86aa81fbb"><div class="ttname"><a href="Engine_8h.html#a217d8ec7037d879a774f4cb86aa81fbb">WINDOW_DEFAULT_SIZE_W</a></div><div class="ttdeci">#define WINDOW_DEFAULT_SIZE_W</div><div class="ttdef"><b>Definition:</b> Engine.h:51</div></div>
@@ -194,11 +201,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="VectF4_8h_html"><div class="ttname"><a href="VectF4_8h.html">VectF4.h</a></div></div>
 <div class="ttc" id="classCamera_html"><div class="ttname"><a href="classCamera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.h:25</div></div>
 <div class="ttc" id="VectF2_8h_html"><div class="ttname"><a href="VectF2_8h.html">VectF2.h</a></div></div>
-<div class="ttc" id="classEngine_html_a89c3790af9e7b75e6b220bfe05244bde"><div class="ttname"><a href="classEngine.html#a89c3790af9e7b75e6b220bfe05244bde">Engine::init</a></div><div class="ttdeci">bool init()</div><div class="ttdef"><b>Definition:</b> Engine.cpp:27</div></div>
+<div class="ttc" id="classEngine_html_a89c3790af9e7b75e6b220bfe05244bde"><div class="ttname"><a href="classEngine.html#a89c3790af9e7b75e6b220bfe05244bde">Engine::init</a></div><div class="ttdeci">bool init()</div><div class="ttdef"><b>Definition:</b> Engine.cpp:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 25 2018 23:08:25 for PBI-4 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 31 2018 10:32:58 for PBI-4 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

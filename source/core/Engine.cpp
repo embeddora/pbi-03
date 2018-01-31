@@ -19,6 +19,8 @@
 
 #include "core/Engine.h"
 
+
+
 Engine::Engine() : renderWindow()
 {
 	this->isRunning = false;
@@ -30,7 +32,8 @@ bool Engine::init()
 
 	meshManager.startUp();
 
-	meshManager.loadMeshesFromJSON("resources/meshes/suzanne.babylon");
+//	meshManager.loadMeshesFromJSON("resources/meshes/scene");
+	meshManager.loadMeshesFromJSON("resources/meshes/scene.bicube");
 
 	this->cctv.position = VectF3(0.0f, 0.0f, -4.0f);
 
@@ -103,7 +106,8 @@ bool Engine::renderOneFrame()
 
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
 
-	this->renderAll(renderer, this->cctv, meshManager.listMeshes);
+//	this->renderAll(renderer, this->cctv, meshManager.listMeshes);
+	this->renderAll_xyz(renderer, this->cctv, meshManager.listMeshes/*, this->fX, this->fY, this->fZ*/);
 
 	SDL_RenderPresent(renderer);
 
@@ -197,15 +201,124 @@ const float h       = WINDOW_DEFAULT_SIZE_H;
 
 			//DrawSDLUtils::drawScanLineTriangle(renderer, depthBuffer, v1, v2, v3, w, h, &color);
 
-			/*
+			/* */
 			SDL_SetRenderDrawColor(renderer, 92, 92, 92, SDL_ALPHA_OPAQUE);
+
 			DrawSDLUtils::drawLine(renderer, p1_proj, p2_proj, w, h);
 			DrawSDLUtils::drawLine(renderer, p2_proj, p3_proj, w, h);
 			DrawSDLUtils::drawLine(renderer, p3_proj, p1_proj, w, h);
-			*/
+			/* */
 		}
 
-		m.rotation.y += 0.0025; //TODO tmp
+		/* m.rotation.x += 0.0025;
+		m.rotation.y += 0.0025;
+		m.rotation.z += 0.0025; */
+	}
+}
+
+
+void Engine::renderAll_xyz(SDL_Renderer* renderer, Camera camera, std::vector<Mesh> &meshes)
+{
+MatrixF4 viewMatrix;
+
+MatrixF4 projectionMatrix;
+
+const VectF3 up(0.0f, 1.0f, 0.0f);
+
+const float w       = WINDOW_DEFAULT_SIZE_W;
+
+const float h       = WINDOW_DEFAULT_SIZE_H;
+
+	viewMatrix          = MatrixTransform::creaLookAtLH(camera.position, camera.target, up);
+
+	projectionMatrix    = MatrixTransform::creaPerspectiveFovLH(1.57f, w, h, 1.0f, 45.0f);
+
+	// Project each mesh
+	for(Mesh & m : meshes)
+	{
+	const MatrixF4 posMatrix        = MatrixTransform::creaTranslate(m.position);
+
+	const MatrixF4 rotMatrix        = MatrixTransform::creaRotateZYX(m.rotation);
+
+	const MatrixF4 scaMatrix        = MatrixTransform::creaScale(m.scale);
+
+	const MatrixF4 worldMatrix      = posMatrix * rotMatrix * scaMatrix;
+
+	const MatrixF4 cameraMatrix     = viewMatrix * worldMatrix;
+
+	const MatrixF4 transformMatrix  = projectionMatrix * cameraMatrix;
+
+		for(auto & face : m.faces)
+		{
+			// Project 3 vertices in the 2D screen coordinates
+			VectF3 p1_proj = MatrixTransform::projectOnScreen(m.vertices[face.a], transformMatrix, w, h);
+
+			VectF3 p2_proj = MatrixTransform::projectOnScreen(m.vertices[face.b], transformMatrix, w, h);
+
+			VectF3 p3_proj = MatrixTransform::projectOnScreen(m.vertices[face.c], transformMatrix, w, h);
+
+			// Project normals in world coordinates
+			VectF3 p1_norm = projectPoint(m.normals[face.a], worldMatrix);
+
+			VectF3 p2_norm = projectPoint(m.normals[face.b], worldMatrix);
+
+			VectF3 p3_norm = projectPoint(m.normals[face.c], worldMatrix);
+
+			// Project positions in world coordinates
+			VectF3 p1_pos = projectPoint(m.vertices[face.a], worldMatrix);
+
+			VectF3 p2_pos = projectPoint(m.vertices[face.b], worldMatrix);
+
+			VectF3 p3_pos = projectPoint(m.vertices[face.c], worldMatrix);
+
+			VertexData v1 = {&p1_proj, &p1_norm, &p1_pos};
+
+			VertexData v2 = {&p2_proj, &p2_norm, &p2_pos};
+
+			VertexData v3 = {&p3_proj, &p3_norm, &p3_pos};
+
+			// Color of the light (To refactor)
+			SDL_Color color;
+
+			color.r = 255;
+
+			color.g = 240;
+
+			color.b = 42;
+
+			color.a = SDL_ALPHA_OPAQUE;
+
+			if (1 == iChanged)
+			{
+				/* std::cout << "DO{" << fX << "," << fY << "," << fZ << "}" << std::endl;
+				printf("<%p>\n", &fX); */
+				if (0 != fX) { m.position.x += fStep*fX; }
+
+				if (0 != fY) { m.position.y += fStep*fY; }
+
+				if (0 != fZ) { m.position.z += fStep*fZ; }
+
+				fX = fY = fZ = 0.0f; iChanged = 0;
+				/* std::cout << "PS{" << fX << "," << fY << "," << fZ << "}" << std::endl;
+				printf("<%p>\n", &fX); */
+			}
+
+			DrawSDLUtils::drawGouraudTriangle(renderer, depthBuffer, v1, v2, v3, w, h, &color);
+
+			//DrawSDLUtils::drawScanLineTriangle(renderer, depthBuffer, v1, v2, v3, w, h, &color);
+
+			/* */
+			SDL_SetRenderDrawColor(renderer, 92, 92, 92, SDL_ALPHA_OPAQUE);
+
+			DrawSDLUtils::drawLine(renderer, p1_proj, p2_proj, w, h);
+			DrawSDLUtils::drawLine(renderer, p2_proj, p3_proj, w, h);
+			DrawSDLUtils::drawLine(renderer, p3_proj, p1_proj, w, h);
+			/* */
+		}
+
+		/*m.rotation.x += 0.0025;
+		m.rotation.y += 0.0025;
+		m.rotation.z += 0.0025;*/
 	}
 }
 
@@ -215,6 +328,7 @@ bool Engine::stopRendering()
 
 	return true;
 }
+
 
 void Engine::handleEvent(SDL_Event* sdlevent)
 {
@@ -230,44 +344,56 @@ void Engine::handleEvent(SDL_Event* sdlevent)
 
 	case SDL_MOUSEWHEEL:
 
-//+++		cctv.position.z += sdlevent->wheel.y * 0.02f;//0.05f;//0.005f;
-		cctv.position.y += sdlevent->wheel.y * 0.02f;
+#if 1
+		cctv.position.z += sdlevent->wheel.y * 0.02f;
+		std::cout << "(" << cctv.position.x << "," << cctv.position.y << "," << cctv.position.z << ")" << std::endl;
+#endif /* (0) */
 
 		break;
+
 
 	case SDL_KEYDOWN:
 
-		std::cout << "(SDL_KEYDOWN)" << std::endl;
+		std::cout << "SDL_KEYDOWN" << std::endl;
 
-		SDL_FlushEvent(SDL_KEYDOWN);
+		switch (sdlevent->key.keysym.sym) 
+		{
+			/* case SDLK_0: std::cout << "0 pressed" << std::endl; break;
+			case SDLK_1: std::cout << "1 pressed" << std::endl; break;
+			case SDLK_2: std::cout << "2 pressed" << std::endl; break;
+			case SDLK_3: std::cout << "3 pressed" << std::endl; break;
+			case SDLK_4: std::cout << "4 pressed" << std::endl; break;
+			case SDLK_5: std::cout << "5 pressed" << std::endl; break;
+			case SDLK_6: std::cout << "6 pressed" << std::endl; break;
+			case SDLK_7: std::cout << "7 pressed" << std::endl; break;
+			case SDLK_8: std::cout << "8 pressed" << std::endl; break;
+			case SDLK_9: std::cout << "9 pressed" << std::endl; break; */
 
+			case SDLK_a: { iChanged = 1; fX = -1;break; }
+			case SDLK_f: { iChanged = 1; fX =  1;break; }
+			case SDLK_e: { iChanged = 1; fY = -1;break; }
+			case SDLK_c: { iChanged = 1; fY =  1;break; }
+			case SDLK_m: { iChanged = 1; fZ = -1;break; } 
+			case SDLK_n: { iChanged = 1; fZ =  1;break; }
+
+			/* case SDLK_PAGEDOWN:  std::cout << "PDOWN" << std::endl; break;
+			case SDLK_PAGEUP:    std::cout << "PUP" << std::endl; break;
+			case SDLK_DOWN:      std::cout << "DOWN" << std::endl; break;
+			case SDLK_UP:        std::cout << "UP" << std::endl; break;
+			case SDLK_LEFT:      std::cout << "LEFT" << std::endl; break;
+			case SDLK_RIGHT:     std::cout << "RIGHT" << std::endl; break; */
+
+			default: break;
+		}
 		break;
 
 	case SDL_KEYUP:
-
-		//+++ std::cout << "(SDL_KEYUP)" << std::endl;
-
-		SDL_FlushEvent(SDL_KEYUP);
-
 		break;
 
 	case SDL_TEXTINPUT:
-
-		std::cout << "(SDL_TEXTINPUT)" << std::endl;
-
-		SDL_FlushEvent(SDL_TEXTINPUT);
-
+		/* std::cout << "(SDL_TEXTINPUT)" << std::endl;
+		SDL_FlushEvent(SDL_TEXTINPUT); */
 		break;
-
-		/*
-		case SDL_MOUSEMOTION:
-		case SDL_MOUSEBUTTONDOWN:
-		case SDL_MOUSEBUTTONUP:
-		case SDL_MOUSEWHEEL:
-		case SDL_KEYDOWN:
-		case SDL_KEYUP:
-		case SDL_TEXTINPUT:
-		*/
 	}
 
 
