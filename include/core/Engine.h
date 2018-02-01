@@ -79,6 +79,7 @@ class Engine : private Singleton<Engine>
 
     public:
         bool init();
+        bool initMesh(const char*);
         bool startRendering();
         bool stopRendering();
         void destroy();

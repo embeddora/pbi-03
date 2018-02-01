@@ -23,15 +23,24 @@
 
 #include "core/Engine.h"
 
-
 int main(int argc, char**argv)
 {
-	std::cout << "main(int argc, char**argv)" << std::endl;
-
+	/* Instantiate engine */
 	Engine& engine = Engine::getInstance();
 
+	/* Initialize SDL sybsystem and main window  */
 	engine.init();
 
+	/* Load mesh from file */
+	engine.initMesh("resources/meshes/scene.cube");
+
+	/* Cyclically process keys and draw a scene  */
+	engine.startRendering();
+
+	/* Load mesh from file */
+	engine.initMesh("resources/meshes/scene.bicube");
+
+	/* Cyclically process keys and draw a scene  */
 	engine.startRendering();
 
 	return EXIT_SUCCESS;

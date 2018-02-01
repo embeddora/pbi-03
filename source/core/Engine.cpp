@@ -28,17 +28,6 @@ Engine::Engine() : renderWindow()
 
 bool Engine::init()
 {
-	MeshManager& meshManager = MeshManager::getInstance();
-
-	meshManager.startUp();
-
-//	meshManager.loadMeshesFromJSON("resources/meshes/scene");
-	meshManager.loadMeshesFromJSON("resources/meshes/scene.bicube");
-
-	this->cctv.position = VectF3(0.0f, 0.0f, -4.0f);
-
-	this->cctv.target = meshManager.listMeshes[0].position;
-
 	//Init SDL, TODO Dev Note: To export from Engine to a general 'init manager' or something like
 	if(SDL_Init(SDL_INIT_EVERYTHING) != 0)
 	{
@@ -50,6 +39,23 @@ bool Engine::init()
 	renderWindow.initialize("3D soft Engine", WINDOW_DEFAULT_SIZE_W, WINDOW_DEFAULT_SIZE_H);
 
 	renderWindow.show();
+
+	return true;
+}
+
+bool Engine::initMesh(const char * whichMesh)
+{
+	MeshManager& meshManager = MeshManager::getInstance();
+
+	meshManager.shutDown();
+
+	meshManager.startUp();
+
+	meshManager.loadMeshesFromJSON(whichMesh);
+
+	this->cctv.position = VectF3(0.0f, 0.0f, -4.0f);
+
+	this->cctv.target = meshManager.listMeshes[0].position;
 
 	return true;
 }
@@ -106,7 +112,6 @@ bool Engine::renderOneFrame()
 
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
 
-//	this->renderAll(renderer, this->cctv, meshManager.listMeshes);
 	this->renderAll_xyz(renderer, this->cctv, meshManager.listMeshes/*, this->fX, this->fY, this->fZ*/);
 
 	SDL_RenderPresent(renderer);
@@ -301,6 +306,17 @@ const float h       = WINDOW_DEFAULT_SIZE_H;
 				fX = fY = fZ = 0.0f; iChanged = 0;
 				/* std::cout << "PS{" << fX << "," << fY << "," << fZ << "}" << std::endl;
 				printf("<%p>\n", &fX); */
+
+std::cout << "Coords {x=" << m.position.x << ", y=" << m.position.y << ", z=" << m.position.z << "}." << std::endl;
+
+				if ( -2.49 > m.position.z )
+				{
+std::cout << "gotta go home :( " << std::endl;
+					//+++this->isRunning = false;
+					m.position.z = m.position.y = m.position.x = 0.0;
+
+					this->stopRendering();
+				}
 			}
 
 			DrawSDLUtils::drawGouraudTriangle(renderer, depthBuffer, v1, v2, v3, w, h, &color);
@@ -370,9 +386,9 @@ void Engine::handleEvent(SDL_Event* sdlevent)
 			case SDLK_9: std::cout << "9 pressed" << std::endl; break; */
 
 			case SDLK_a: { iChanged = 1; fX = -1;break; }
-			case SDLK_f: { iChanged = 1; fX =  1;break; }
-			case SDLK_e: { iChanged = 1; fY = -1;break; }
-			case SDLK_c: { iChanged = 1; fY =  1;break; }
+			case SDLK_d: { iChanged = 1; fX =  1;break; }
+			case SDLK_w: { iChanged = 1; fY = -1;break; }
+			case SDLK_x: { iChanged = 1; fY =  1;break; }
 			case SDLK_m: { iChanged = 1; fZ = -1;break; } 
 			case SDLK_n: { iChanged = 1; fZ =  1;break; }
 
