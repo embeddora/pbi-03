@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classUncopyable.html" title="Uncopyable\&lt; Singleton\l\&lt; Engine \&gt; \&gt;" alt="" coords="5,5,163,46"/>
-<area shape="rect" id="node2" href="$classSingleton.html" title="Singleton\&lt; Engine \&gt;" alt="" coords="211,12,351,39"/>
-<area shape="rect" id="node3" href="$classEngine.html" title="Engine" alt="" coords="401,12,463,39"/>
-</map>

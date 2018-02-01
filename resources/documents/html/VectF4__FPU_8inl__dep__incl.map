@@ -1,9 +1,0 @@
-<map id="include/math/VectF4_FPU.inl" name="include/math/VectF4_FPU.inl">
-<area shape="rect" id="node2" href="$VectF4_8inl.html" title="include/math/VectF4.inl" alt="" coords="131,96,289,123"/>
-<area shape="rect" id="node3" href="$VectF4_8h.html" title="include/math/VectF4.h" alt="" coords="134,171,287,197"/>
-<area shape="rect" id="node4" href="$Engine_8h.html" title="include/core/Engine.h" alt="" coords="92,395,239,421"/>
-<area shape="rect" id="node7" href="$MatrixF4_8h.html" title="include/math/MatrixF4.h" alt="" coords="129,245,292,272"/>
-<area shape="rect" id="node8" href="$MatrixTransform_8h.html" title="include/math/MatrixTransform.h" alt="" coords="203,320,409,347"/>
-<area shape="rect" id="node5" href="$Engine_8cpp.html" title="source/core/Engine.cpp" alt="" coords="5,469,163,496"/>
-<area shape="rect" id="node6" href="$main_8cpp.html" title="source/main.cpp" alt="" coords="187,469,305,496"/>
-</map>

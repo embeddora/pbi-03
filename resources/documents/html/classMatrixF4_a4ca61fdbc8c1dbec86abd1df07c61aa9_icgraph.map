@@ -1,8 +1,0 @@
-<map id="MatrixF4::IDENTITY" name="MatrixF4::IDENTITY">
-<area shape="rect" id="node2" href="$classMatrixTransform.html#a0876b127542db4f6d37ab5df59f25dd2" title="MatrixTransform::creaTranslate" alt="" coords="198,5,402,32"/>
-<area shape="rect" id="node3" href="$classMatrixTransform.html#af5fcb785703e6b6a9a7744320f8bfdc9" title="MatrixTransform::creaRotateX" alt="" coords="201,56,399,83"/>
-<area shape="rect" id="node4" href="$classMatrixTransform.html#abdfe3c4ff1ea760ce109e6c6931407b4" title="MatrixTransform::creaRotateZYX" alt="" coords="451,132,666,159"/>
-<area shape="rect" id="node6" href="$classMatrixTransform.html#a56c4b3216261eeca605f5eaff484f507" title="MatrixTransform::creaRotateY" alt="" coords="201,157,399,184"/>
-<area shape="rect" id="node7" href="$classMatrixTransform.html#aef68de02af8fec6c336b3c8cf6e9f1b0" title="MatrixTransform::creaRotateZ" alt="" coords="201,208,399,235"/>
-<area shape="rect" id="node5" href="$classMatrixTransform.html#a86a6d522382fea9f569358f367340e02" title="MatrixTransform::creaRotateZYX" alt="" coords="715,132,930,159"/>
-</map>

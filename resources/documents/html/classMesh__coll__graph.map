@@ -1,6 +1,0 @@
-<map id="Mesh" name="Mesh">
-<area shape="rect" id="node3" href="$structFace.html" title="{Face\n||}" alt="" coords="48,307,99,384"/>
-<area shape="rect" id="node6" href="$classVectF3.html" title="{VectF3\n||+ VectF3()\l+ VectF3()\l+ VectF3()\l+ length()\l+ squareLength()\l+ getNormalFast()\l+ normalizeFast()\l+ getCrossProduct()\l+ set()\l+ set()\land 20 more...\l+ dotProduct()\l+ crossProduct()\l}" alt="" coords="174,219,313,472"/>
-<area shape="rect" id="node9" title="STL class. " alt="" coords="447,536,525,613"/>
-<area shape="rect" id="node10" title="STL class. " alt="" coords="423,299,549,391"/>
-</map>

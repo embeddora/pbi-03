@@ -1,8 +1,0 @@
-<map id="include/core/Uncopyable.h" name="include/core/Uncopyable.h">
-<area shape="rect" id="node2" href="$Singleton_8h.html" title="include/core/Singleton.h" alt="" coords="123,80,284,107"/>
-<area shape="rect" id="node3" href="$MeshManager_8h.html" title="include/core/MeshManager.h" alt="" coords="109,155,299,181"/>
-<area shape="rect" id="node4" href="$MeshManager_8cpp.html" title="source/core/MeshManager.cpp" alt="" coords="5,229,205,256"/>
-<area shape="rect" id="node5" href="$Engine_8h.html" title="include/core/Engine.h" alt="" coords="231,229,377,256"/>
-<area shape="rect" id="node6" href="$Engine_8cpp.html" title="source/core/Engine.cpp" alt="" coords="143,304,301,331"/>
-<area shape="rect" id="node7" href="$main_8cpp.html" title="source/main.cpp" alt="" coords="326,304,444,331"/>
-</map>

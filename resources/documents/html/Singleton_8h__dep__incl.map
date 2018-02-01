@@ -1,7 +1,0 @@
-<map id="include/core/Singleton.h" name="include/core/Singleton.h">
-<area shape="rect" id="node2" href="$MeshManager_8h.html" title="include/core/MeshManager.h" alt="" coords="109,80,299,107"/>
-<area shape="rect" id="node3" href="$MeshManager_8cpp.html" title="source/core/MeshManager.cpp" alt="" coords="5,155,205,181"/>
-<area shape="rect" id="node4" href="$Engine_8h.html" title="include/core/Engine.h" alt="" coords="231,155,377,181"/>
-<area shape="rect" id="node5" href="$Engine_8cpp.html" title="source/core/Engine.cpp" alt="" coords="143,229,301,256"/>
-<area shape="rect" id="node6" href="$main_8cpp.html" title="source/main.cpp" alt="" coords="326,229,444,256"/>
-</map>

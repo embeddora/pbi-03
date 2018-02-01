@@ -1,8 +1,0 @@
-<map id="include/core/debug.h" name="include/core/debug.h">
-<area shape="rect" id="node2" href="$MatrixF3_8h.html" title="include/math/MatrixF3.h" alt="" coords="21,80,184,107"/>
-<area shape="rect" id="node6" href="$MatrixF4_8h.html" title="include/math/MatrixF4.h" alt="" coords="140,155,302,181"/>
-<area shape="rect" id="node7" href="$MatrixTransform_8h.html" title="include/math/MatrixTransform.h" alt="" coords="72,229,278,256"/>
-<area shape="rect" id="node3" href="$Engine_8h.html" title="include/core/Engine.h" alt="" coords="102,304,249,331"/>
-<area shape="rect" id="node4" href="$Engine_8cpp.html" title="source/core/Engine.cpp" alt="" coords="15,379,173,405"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="source/main.cpp" alt="" coords="198,379,316,405"/>
-</map>
