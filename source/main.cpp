@@ -28,16 +28,16 @@ int main(int argc, char**argv)
 	/* Instantiate engine */
 	Engine& engine = Engine::getInstance();
 
-	/* Initialize SDL sybsystem and main window  */
+	/* Initialize SDL subsystem and main window  */
 	engine.init();
 
-	/* Load mesh from file */
+	/* Load MESH from a file */
 	engine.initMesh("resources/meshes/scene.cube");
 
 	/* Cyclically process keys and draw a scene  */
 	engine.startRendering();
 
-	/* Load mesh from file */
+	/* Load MESH from a file */
 	engine.initMesh("resources/meshes/scene.bicube");
 
 	/* Cyclically process keys and draw a scene  */

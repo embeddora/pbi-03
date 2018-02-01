@@ -214,10 +214,6 @@ const float h       = WINDOW_DEFAULT_SIZE_H;
 			DrawSDLUtils::drawLine(renderer, p3_proj, p1_proj, w, h);
 			/* */
 		}
-
-		/* m.rotation.x += 0.0025;
-		m.rotation.y += 0.0025;
-		m.rotation.z += 0.0025; */
 	}
 }
 
@@ -295,8 +291,6 @@ const float h       = WINDOW_DEFAULT_SIZE_H;
 
 			if (1 == iChanged)
 			{
-				/* std::cout << "DO{" << fX << "," << fY << "," << fZ << "}" << std::endl;
-				printf("<%p>\n", &fX); */
 				if (0 != fX) { m.position.x += fStep*fX; }
 
 				if (0 != fY) { m.position.y += fStep*fY; }
@@ -304,14 +298,12 @@ const float h       = WINDOW_DEFAULT_SIZE_H;
 				if (0 != fZ) { m.position.z += fStep*fZ; }
 
 				fX = fY = fZ = 0.0f; iChanged = 0;
-				/* std::cout << "PS{" << fX << "," << fY << "," << fZ << "}" << std::endl;
-				printf("<%p>\n", &fX); */
 
-std::cout << "Coords {x=" << m.position.x << ", y=" << m.position.y << ", z=" << m.position.z << "}." << std::endl;
+				//std::cout << "Coords {x=" << m.position.x << ", y=" << m.position.y << ", z=" << m.position.z << "}." << std::endl;
 
-				if ( -2.49 > m.position.z )
+				if ( -3.49 > m.position.z )
 				{
-std::cout << "gotta go home :( " << std::endl;
+
 					//+++this->isRunning = false;
 					m.position.z = m.position.y = m.position.x = 0.0;
 
@@ -370,34 +362,19 @@ void Engine::handleEvent(SDL_Event* sdlevent)
 
 	case SDL_KEYDOWN:
 
-		std::cout << "SDL_KEYDOWN" << std::endl;
-
 		switch (sdlevent->key.keysym.sym) 
 		{
-			/* case SDLK_0: std::cout << "0 pressed" << std::endl; break;
-			case SDLK_1: std::cout << "1 pressed" << std::endl; break;
-			case SDLK_2: std::cout << "2 pressed" << std::endl; break;
-			case SDLK_3: std::cout << "3 pressed" << std::endl; break;
-			case SDLK_4: std::cout << "4 pressed" << std::endl; break;
-			case SDLK_5: std::cout << "5 pressed" << std::endl; break;
-			case SDLK_6: std::cout << "6 pressed" << std::endl; break;
-			case SDLK_7: std::cout << "7 pressed" << std::endl; break;
-			case SDLK_8: std::cout << "8 pressed" << std::endl; break;
-			case SDLK_9: std::cout << "9 pressed" << std::endl; break; */
-
 			case SDLK_a: { iChanged = 1; fX = -1;break; }
-			case SDLK_d: { iChanged = 1; fX =  1;break; }
-			case SDLK_w: { iChanged = 1; fY = -1;break; }
-			case SDLK_x: { iChanged = 1; fY =  1;break; }
-			case SDLK_m: { iChanged = 1; fZ = -1;break; } 
-			case SDLK_n: { iChanged = 1; fZ =  1;break; }
 
-			/* case SDLK_PAGEDOWN:  std::cout << "PDOWN" << std::endl; break;
-			case SDLK_PAGEUP:    std::cout << "PUP" << std::endl; break;
-			case SDLK_DOWN:      std::cout << "DOWN" << std::endl; break;
-			case SDLK_UP:        std::cout << "UP" << std::endl; break;
-			case SDLK_LEFT:      std::cout << "LEFT" << std::endl; break;
-			case SDLK_RIGHT:     std::cout << "RIGHT" << std::endl; break; */
+			case SDLK_d: { iChanged = 1; fX =  1;break; }
+
+			case SDLK_w: { iChanged = 1; fY = -1;break; }
+
+			case SDLK_x: { iChanged = 1; fY =  1;break; }
+
+			case SDLK_m: { iChanged = 1; fZ = -1;break; } 
+
+			case SDLK_n: { iChanged = 1; fZ =  1;break; }
 
 			default: break;
 		}
@@ -407,6 +384,7 @@ void Engine::handleEvent(SDL_Event* sdlevent)
 		break;
 
 	case SDL_TEXTINPUT:
+
 		/* std::cout << "(SDL_TEXTINPUT)" << std::endl;
 		SDL_FlushEvent(SDL_TEXTINPUT); */
 		break;
