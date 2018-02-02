@@ -21,19 +21,30 @@
 PROJ	=PBI3
 
 
-CPPFLAGS=-I./include   -std=gnu++11  -g
+CFLAGS=-I./include -DEXTRA_INFORMATIVITY -DWIDE_CONSOLE -DRESPONCE_LATENCY_GAUGING   -g
 #
 # -g -- debug symbols (to explore dumped core, for instance)
+# -DEXTRA_INFORMATIVITY -- show cURL details into console
+# -DWIDE_CONSOLE 	-- show cURL details in in console wider than 170 chars 
+# -DRESPONCE_LATENCY_GAUGING -- some execution time statistics in output file
+
+CPPFLAGS=-I./include   -std=gnu++11  -DRESPONCE_LATENCY_GAUGING -g
 #
+# -g -- debug symbols (to explore dumped core, for instance)
+# -DRESPONCE_LATENCY_GAUGING -- some execution time statistics in output file
 
-LDFLAGS=    -lSDL2main -lSDL2
 
 
-OBJS=   source/core/Camera.cpp.o source/core/Engine.cpp.o \
+LDFLAGS=    -lSDL2main -lSDL2 -lcurl
+
+
+OBJS=	source/core/Camera.cpp.o source/core/Engine.cpp.o    \
 	source/core/Mesh.cpp.o source/core/MeshManager.cpp.o \
-	source/main.cpp.o source/render/AppWindow.cpp.o \
-	source/render/SDL2/AppWindowSDL2.cpp.o \
-	source/render/SDL2/DrawSDLUtils.cpp.o
+	source/main.cpp.o source/render/AppWindow.cpp.o      \
+	source/render/SDL2/AppWindowSDL2.cpp.o               \
+	source/render/SDL2/DrawSDLUtils.cpp.o                \
+	source/network/reguests.c.o                           
+
 
 # Not cross-compiling till instance for <Linux/i585> platform is ready
 PREFIX=
@@ -41,6 +52,8 @@ PREFIX=
 DOCSCFG=./resources/documents.cfg
 
 DOCSDIR=./resources/documents
+
+CC=$(PREFIX)gcc
 
 CPP=$(PREFIX)g++
 
@@ -53,13 +66,18 @@ all:	$(OBJS) $(TARGET)
 %.cpp.o: %.cpp
 	$(CPP) $(CPPFLAGS)  -c -o $@ $<
 
+%.c.o: %.c
+	$(CC) $(CFLAGS)  -c -o $@ $<
+
 $(TARGET): $(OBJS)
 	$(CPP)  $(OBJS)       -o $@  $(LDFLAGS)
 
 GRBG=	source/render/SDL2/*.o source/render/*.o source/*.o source/core/*.o       \
+	source/network/*.o							  \
 	source/render/SDL2/*~  source/render/*~  source/*~  source/core/*~        \
+	source/network/*~							  \
 	include/render/SDL2/*~ include/render/*~ include/math/*~  include/core/*~ \
-	./*.o ./*~
+	./*.o ./*~ ./_delme.*
 
 GRBGxt= $(TARGET) $(DOCSDIR) core  *.tar.gz resources/*~
 
@@ -74,3 +92,5 @@ tar:
 
 clean:
 	rm $(GRBG) $(GRBGxt) ; rm -r -v $(DOCSDIR)
+
+

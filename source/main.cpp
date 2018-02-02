@@ -17,13 +17,13 @@
  * Abstract: 
  */
 
-#include <cstdlib>
+/*#include <cstdlib>
 
-#include <iostream>
+#include <iostream>*/
 
 #include "core/Engine.h"
 
-int main(int argc, char**argv)
+int old_main(int argc, char**argv)
 {
 	/* Instantiate engine */
 	Engine& engine = Engine::getInstance();
@@ -31,11 +31,6 @@ int main(int argc, char**argv)
 	/* Initialize SDL subsystem and main window  */
 	engine.init();
 
-	/* Load MESH from a file */
-	engine.initMesh("resources/meshes/scene.cube");
-
-	/* Cyclically process keys and draw a scene  */
-	engine.startRendering();
 
 	/* Load MESH from a file */
 	engine.initMesh("resources/meshes/scene.bicube");
@@ -45,3 +40,241 @@ int main(int argc, char**argv)
 
 	return EXIT_SUCCESS;
 }
+
+
+/* TODO: give a comment */
+#include <stdio.h>
+
+/* TODO: give a comment */
+#include <stdlib.h>
+
+/* TODO: give a comment */
+#include <string.h>
+
+/* unlink() */
+#include <unistd.h>
+
+/* CURL library API */
+#include <curl/curl.h>
+
+/* Own interface, structures, definitions */
+#include "../source/network/requests.h"
+
+
+//int kind_of_main (int argc, char **argv)
+int main (int argc, char **argv)
+{
+CURL *urlLib;
+
+CURLcode iRes;
+
+char cOpCode[R30_STRNLEN];
+
+	/* True or forged, we need it for unlocking the site */
+	ComputeRSA();
+
+	/* Initialize variables and callbacks of library */
+	urlLib = curl_easy_init();
+
+	/* Can start as soon as library entry point was initialized */
+	if(urlLib)
+	{
+	char cTemporary[0x200];
+
+		/* Instantiate engine */
+		Engine& engine = Engine::getInstance();
+		/* Initialize SDL subsystem and main window  */
+		engine.init();
+
+		iRes = curl_easy_setopt(urlLib, CURLOPT_DEBUGFUNCTION, iTrace );
+		iRes = curl_easy_setopt(urlLib, CURLOPT_HEADER, 1L);
+
+		/* So far I experienced there's no other, lets use this one. TODO: check if it's really so in <TouchP5-xxxx> code*/
+		iRes = curl_easy_setopt(urlLib, CURLOPT_REFERER, "http://192.168.0.1/webpages/index.html");
+
+		
+		/* Assign default value with which LUA-part of the site won't work anyway; only JS-part will. */
+		sprintf (cTemporary, "sysauth=%s", CUKY0);
+		iRes = curl_easy_setopt(urlLib, CURLOPT_COOKIE, cTemporary);
+
+
+		/* Put our designations into traffic, so we're able to distingiosh own cookies from the rest */
+		sprintf (cTemporary, "Mozilla/5.0 (X11; Ubuntu; %s) %s", argv[0], R30_CKY_MARKER);
+		iRes = curl_easy_setopt(urlLib, CURLOPT_USERAGENT, cTemporary);
+
+		iRes = curl_easy_setopt(urlLib, CURLOPT_CONNECTTIMEOUT, 30 );
+		iRes = curl_easy_setopt(urlLib, CURLOPT_VERBOSE, 1L);
+
+#if defined (RESPONCE_LATENCY_GAUGING)
+
+		/* Send all data received to this function */
+		curl_easy_setopt(urlLib, CURLOPT_WRITEFUNCTION, iRecvClbk);
+
+#endif /* (RESPONCE_LATENCY_GAUGING) */
+
+		int iRepeats = 1;
+
+		/* Decreasing index. Let's open the site, and do the rest */
+		while (iRepeats--) {
+
+		/* TODO: deploy for checking, or move away otherwise */
+		int iRes;
+
+			/* We should compute them anew each time we're opening the site */
+			m_PasswordFound = m_TokenFound = m_CookieFound = 0;
+
+#if defined (RESPONCE_LATENCY_GAUGING)
+
+			/* TODO: give a comment */
+			gettimeofday(&stHttpRequest, 0);
+			/* TODO: give a comment */
+			pcAddrStr[0]=0;
+
+#endif /* (RESPONCE_LATENCY_GAUGING) */
+
+			/* Load MESH from a file */
+			engine.initMesh("resources/meshes/scene.cube");
+			/* Cyclically process keys and draw a scene  */
+			engine.startRendering();
+			/* Let's open site. Mandatory for any other operation to be effective */
+			iRes = iProcessArray(urlLib, get_aOpenArray() );
+			/* Let's sleep for a site to become stable */
+			sleep (R30_GP_TMO);
+
+			/* Load MESH from a file */
+			engine.initMesh("resources/meshes/scene.bicube");
+			/* Cyclically process keys and draw a scene  */
+			engine.startRendering();
+			/* Open first tab of site (seems to be must-have in order to proceed). Here <m_TokenFound> becomes 1 */
+			iRes = iProcessArray(urlLib, get_aAuthArray() );
+			/* Self-explanatory */
+			printf("[%s] %s Site unlocked. Now can do _any operation\n", __FILE__, __func__); 
+			/* To prevent libCURL from suppressing conventional output to '#2' */
+			fflush(stderr);
+
+
+			/* Load MESH from a file */
+			engine.initMesh("resources/meshes/scene.cube");
+			/* Cyclically process keys and draw a scene  */
+			engine.startRendering();
+			/* Let's deploy a duplication of <Gp aTab2Array[]> to see if it's necessary or not */
+			iRes = iProcessArray(urlLib, get_aTab2Open_Array() );
+			/* Wait for system to stabilize */
+			sleep (R30_TAB2_TMO);
+			/* Self-explanatory */
+			fprintf(stderr, "[%s] %s Competing Tab2-Open tested\n", __FILE__, __func__);
+#if 0
+
+			/* Do the 'Network Map applet' */
+			iRes = iProcessArray(urlLib, (void *) aTab2NetworkMap_Array);
+			/* Wait for system to stabilize */
+			sleep (R30_TAB2_TMO);
+			/* Self-explanatory */
+			fprintf(stderr, "[%s] %s Network Map applet on Tab2 tested\n", __FILE__, __func__);
+
+			/* Do the 'Internet applet' */
+			iRes = iProcessArray(urlLib, (void *) aTab2Internet_Array);
+			/* Wait for system to stabilize */
+			sleep (R30_TAB2_TMO);
+			/* Self-explanatory */
+			fprintf(stderr, "[%s] %s Internet applet on Tab2 tested\n", __FILE__, __func__);
+
+			/* Do the 'Wireless applet' */
+			iRes = iProcessArray(urlLib, (void *) aTab2Wireless_Array);
+			/* Wait for system to stabilize */
+			sleep (R30_TAB2_TMO);
+			/* Self-explanatory */
+			fprintf(stderr, "[%s] %s Wireless applet on Tab2 tested\n", __FILE__, __func__);
+
+			/* -------------------------------------------------------------------  */
+
+			/* Switch off the flash */
+			iRes = iProcessArray(urlLib, (void *) aTab2Flash_AUS_Array);
+			/* Wait for a board to execute the <sftp_srv stop + PARAM_SAVE>, being invoced by LUA */
+			sleep (R30_TAB2_TMO);
+
+			/* Switch on the flash */
+			iRes = iProcessArray(urlLib, (void *) aTab2Flash_EIN_Array);
+			/* Wait for a board to execute the <sftp_srv start + PARAM_SAVE>, being invoced by LUA */
+			sleep (R30_TAB2_TMO);
+			/* Self-explanatory */
+			fprintf(stderr, "[%s] %s USB-Sharing Flash applet on Tab2 tested\n", __FILE__, __func__);
+
+			/* Open the printer applet */
+			iRes = iProcessArray(urlLib, (void *) aTab2Printer_Array);
+			/* Let's sleep for a site to become stable */
+			sleep (R30_TAB2_TMO);
+
+			/* Switch off the printer */
+			iRes = iProcessArray(urlLib, (void *) aTab2Printer_AUS_Array);
+			/* Wait for a to unload printer drivers, being invoced by LUA */
+			sleep (R30_TAB2_TMO);
+
+			/* Switch on the printer */
+			iRes = iProcessArray(urlLib, (void *) aTab2Printer_EIN_Array);
+			/* Wait for a to load printer drivers and bring-up Net interfaces, being invoced by LUA */
+			sleep (R30_TAB2_TMO);
+			/* Self-explanatory */
+			fprintf(stderr, "[%s] %s USB-Sharing Printer Server applet on Tab2 tested\n", __FILE__, __func__);
+
+			/* -------------------------------------------------------------------  */
+
+			/* Do the 'Parentel Controls applet' */
+			iRes = iProcessArray(urlLib, (void *) aTab2ParentalControls_Array);
+			/* Wait for system to stabilize */
+			sleep (R30_TAB2_TMO);
+			/* Self-explanatory */
+			fprintf(stderr, "[%s] %s Parentel Controls applet on Tab2 tested\n", __FILE__, __func__);
+
+
+
+			/* Do the 'Guest Network applet' */
+			iRes = iProcessArray(urlLib, (void *) aTab2GuestNetwork_Array);
+			/* Wait for system to stabilize */
+			sleep (R30_TAB2_TMO);
+			/* Self-explanatory */
+			fprintf(stderr, "[%s] %s Guest Network applet on Tab2 tested\n", __FILE__, __func__);
+
+
+
+			/* Do the cloud applet' */
+			iRes = iProcessArray(urlLib, (void *) aTab2TplinkCloud_Array);
+			/* Wait for system to stabilize */
+			sleep (R30_TAB2_TMO);
+			/* Self-explanatory */
+			fprintf(stderr, "[%s] %s cloud applet on Tab2 tested\n", __FILE__, __func__);
+
+#endif /* (0) */
+
+			/* Load MESH from a file */
+			engine.initMesh("resources/meshes/scene.bicube");
+			/* Cyclically process keys and draw a scene  */
+			engine.startRendering();
+			/* Exit the site; let's not leave an opened backdoor after us. */
+			iRes = iProcessArray(urlLib, get_aExitArray() );
+			/* Self-explanatory */
+			printf("[%s] %s Site closed. No opetaion is allowed unless it's opened again next time\n", __FILE__, __func__); 
+			/* Needed, cause libcurl may appear to retain the output */
+			fflush(stdout);
+		}
+
+		/* Clean after ourselves */
+		curl_easy_cleanup(urlLib);
+
+	} /* if(urlLib) */
+
+
+#if (EXTRA_PURITY)
+	unlink (ENCR_FNAME);
+
+	unlink (CKY_FNAME);
+
+	unlink (TOKEN_FNAME);
+
+	unlink (PASSWD_FNAME);
+#endif /* (EXTRA_PURITY) */
+
+	/* TODO: who will catch this return code. if noone then what's the point? */
+	return R30_SUCCESS;
+
+} /* int _main (int argc, char **argv) */
