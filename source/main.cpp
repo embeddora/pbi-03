@@ -17,30 +17,8 @@
  * Abstract: 
  */
 
-/*#include <cstdlib>
-
-#include <iostream>*/
-
+/* Class <Engine> */
 #include "core/Engine.h"
-
-int old_main(int argc, char**argv)
-{
-	/* Instantiate engine */
-	Engine& engine = Engine::getInstance();
-
-	/* Initialize SDL subsystem and main window  */
-	engine.init();
-
-
-	/* Load MESH from a file */
-	engine.initMesh("resources/meshes/scene.bicube");
-
-	/* Cyclically process keys and draw a scene  */
-	engine.startRendering();
-
-	return EXIT_SUCCESS;
-}
-
 
 /* TODO: give a comment */
 #include <stdio.h>
@@ -58,8 +36,19 @@ int old_main(int argc, char**argv)
 #include <curl/curl.h>
 
 /* Own interface, structures, definitions */
-#include "../source/network/requests.h"
+#include "network/requests.h"
 
+//extern int FMOD_Main();
+extern int  fmod_init();
+extern void fmod_play1();
+extern void fmod_play2();
+extern void fmod_play3();
+extern void fmod_play4();
+extern void fmod_pause1();
+extern void fmod_pause2();
+extern void fmod_pause3();
+extern void fmod_pause4();
+extern int  fmod_dispose();
 
 //int kind_of_main (int argc, char **argv)
 int main (int argc, char **argv)
@@ -69,6 +58,15 @@ CURL *urlLib;
 CURLcode iRes;
 
 char cOpCode[R30_STRNLEN];
+
+#if 0
+ fmod_init();
+ fmod_play1();
+ fmod_play2();
+ fmod_play3();
+ fmod_dispose();
+return 0;
+#endif /* (0) */
 
 	/* True or forged, we need it for unlocking the site */
 	ComputeRSA();
@@ -83,6 +81,7 @@ char cOpCode[R30_STRNLEN];
 
 		/* Instantiate engine */
 		Engine& engine = Engine::getInstance();
+
 		/* Initialize SDL subsystem and main window  */
 		engine.init();
 
@@ -112,6 +111,9 @@ char cOpCode[R30_STRNLEN];
 
 #endif /* (RESPONCE_LATENCY_GAUGING) */
 
+		/* Initialize audio subsystem */
+		fmod_init();
+
 		int iRepeats = 1;
 
 		/* Decreasing index. Let's open the site, and do the rest */
@@ -132,6 +134,8 @@ char cOpCode[R30_STRNLEN];
 
 #endif /* (RESPONCE_LATENCY_GAUGING) */
 
+			/* Play sound for scene 'scene.cube' */
+			fmod_play1();
 			/* Load MESH from a file */
 			engine.initMesh("resources/meshes/scene.cube");
 			/* Cyclically process keys and draw a scene  */
@@ -140,7 +144,11 @@ char cOpCode[R30_STRNLEN];
 			iRes = iProcessArray(urlLib, get_aOpenArray() );
 			/* Let's sleep for a site to become stable */
 			sleep (R30_GP_TMO);
+			/* Stop sound for scene 'scene.cube' */
+			fmod_pause1();
 
+			/* Play sound for scene 'scene.bicube' */
+			fmod_play2();
 			/* Load MESH from a file */
 			engine.initMesh("resources/meshes/scene.bicube");
 			/* Cyclically process keys and draw a scene  */
@@ -151,8 +159,11 @@ char cOpCode[R30_STRNLEN];
 			printf("[%s] %s Site unlocked. Now can do _any operation\n", __FILE__, __func__); 
 			/* To prevent libCURL from suppressing conventional output to '#2' */
 			fflush(stderr);
+			/* Stop sound for scene 'scene.bicube' */
+			fmod_pause2();
 
-
+			/* Play sound for scene 'scene.cube' */
+			fmod_play3();
 			/* Load MESH from a file */
 			engine.initMesh("resources/meshes/scene.cube");
 			/* Cyclically process keys and draw a scene  */
@@ -163,6 +174,8 @@ char cOpCode[R30_STRNLEN];
 			sleep (R30_TAB2_TMO);
 			/* Self-explanatory */
 			fprintf(stderr, "[%s] %s Competing Tab2-Open tested\n", __FILE__, __func__);
+			/* Stop sound for scene 'scene.cube' */
+			fmod_pause3();
 #if 0
 
 			/* Do the 'Network Map applet' */
@@ -245,7 +258,8 @@ char cOpCode[R30_STRNLEN];
 			fprintf(stderr, "[%s] %s cloud applet on Tab2 tested\n", __FILE__, __func__);
 
 #endif /* (0) */
-
+			/* Play sound for scene 'scene.bicube' */
+			fmod_play4();
 			/* Load MESH from a file */
 			engine.initMesh("resources/meshes/scene.bicube");
 			/* Cyclically process keys and draw a scene  */
@@ -256,6 +270,10 @@ char cOpCode[R30_STRNLEN];
 			printf("[%s] %s Site closed. No opetaion is allowed unless it's opened again next time\n", __FILE__, __func__); 
 			/* Needed, cause libcurl may appear to retain the output */
 			fflush(stdout);
+			/* Stop sound for scene 'scene.bicube' */
+			fmod_pause4();
+
+			getchar();
 		}
 
 		/* Clean after ourselves */
@@ -263,6 +281,8 @@ char cOpCode[R30_STRNLEN];
 
 	} /* if(urlLib) */
 
+	/* Deinitialize audio subsystem */
+	fmod_dispose();
 
 #if (EXTRA_PURITY)
 	unlink (ENCR_FNAME);

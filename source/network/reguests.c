@@ -43,7 +43,7 @@
 #include <curl/curl.h>
 
 /* Own interface, structures, definitions */
-#include "requests.h"
+#include "network/requests.h"
 
 
 

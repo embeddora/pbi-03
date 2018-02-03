@@ -21,21 +21,23 @@
 PROJ	=PBI3
 
 
-CFLAGS=-I./include -DEXTRA_INFORMATIVITY -DWIDE_CONSOLE -DRESPONCE_LATENCY_GAUGING   -g
+CFLAGS=-I./include -I./include/sound -DEXTRA_INFORMATIVITY -DWIDE_CONSOLE -DRESPONCE_LATENCY_GAUGING   -g
 #
 # -g -- debug symbols (to explore dumped core, for instance)
 # -DEXTRA_INFORMATIVITY -- show cURL details into console
 # -DWIDE_CONSOLE 	-- show cURL details in in console wider than 170 chars 
 # -DRESPONCE_LATENCY_GAUGING -- some execution time statistics in output file
 
-CPPFLAGS=-I./include   -std=gnu++11  -DRESPONCE_LATENCY_GAUGING -g
+CPPFLAGS=-I./include -I./include/sound  -std=gnu++11  -DRESPONCE_LATENCY_GAUGING -g
 #
 # -g -- debug symbols (to explore dumped core, for instance)
 # -DRESPONCE_LATENCY_GAUGING -- some execution time statistics in output file
 
 
 
-LDFLAGS=    -lSDL2main -lSDL2 -lcurl
+LDFLAGS=    -lSDL2main -lSDL2 -lcurl -lfmod -lpthread -L./libs -Wl,-rpath-link=./libs  -Wl,-rpath=./libs
+
+SND_LDFLAGS= -I./include/sound
 
 
 OBJS=	source/core/Camera.cpp.o source/core/Engine.cpp.o    \
@@ -43,7 +45,10 @@ OBJS=	source/core/Camera.cpp.o source/core/Engine.cpp.o    \
 	source/main.cpp.o source/render/AppWindow.cpp.o      \
 	source/render/SDL2/AppWindowSDL2.cpp.o               \
 	source/render/SDL2/DrawSDLUtils.cpp.o                \
-	source/network/reguests.c.o                           
+	source/network/reguests.c.o                          \
+	source/sound/fmod.cpp.o                              \
+	source/sound/common.cpp                              \
+	source/sound/common_platform.cpp                              
 
 
 # Not cross-compiling till instance for <Linux/i585> platform is ready
@@ -70,12 +75,13 @@ all:	$(OBJS) $(TARGET)
 	$(CC) $(CFLAGS)  -c -o $@ $<
 
 $(TARGET): $(OBJS)
-	$(CPP)  $(OBJS)       -o $@  $(LDFLAGS)
+	$(CPP)  $(OBJS)       -o $@  $(LDFLAGS)  $(SND_LDFLAGS)
 
 GRBG=	source/render/SDL2/*.o source/render/*.o source/*.o source/core/*.o       \
 	source/network/*.o							  \
 	source/render/SDL2/*~  source/render/*~  source/*~  source/core/*~        \
 	source/network/*~							  \
+	source/sound/*.o source/sound/*~				          \
 	include/render/SDL2/*~ include/render/*~ include/math/*~  include/core/*~ \
 	./*.o ./*~ ./_delme.*
 
