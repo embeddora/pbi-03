@@ -27,16 +27,16 @@ int fmod_init()
 	result = fmod_system->init(100, FMOD_INIT_NORMAL, extradriverdata);
 	ERRCHECK(result);
 
-	result = fmod_system->createSound(Common_MediaPath("wave.mp3"), FMOD_3D, 0, &sound1);
+	result = fmod_system->createSound(Common_MediaPath("Intro.ogg"), FMOD_3D, 0, &sound1);
 	ERRCHECK(result);
 
-	result = fmod_system->createSound(Common_MediaPath("jaguar.wav"), FMOD_3D, 0, &sound2);
+	result = fmod_system->createSound(Common_MediaPath("InternetConnection.ogg"), FMOD_3D, 0, &sound2);
 	ERRCHECK(result);
 
-	result = fmod_system->createSound(Common_MediaPath("singing.wav"), FMOD_2D, 0, &sound3);
+	result = fmod_system->createSound(Common_MediaPath("Stereo.ogg"), FMOD_2D, 0, &sound3);
 	ERRCHECK(result);
 
-	result = fmod_system->createSound(Common_MediaPath("stereo.ogg"), FMOD_3D, 0, &sound4);
+	result = fmod_system->createSound(Common_MediaPath("BeepBeepBeep.ogg"), FMOD_3D, 0, &sound4);
 	ERRCHECK(result);
 
 	Common_Update();

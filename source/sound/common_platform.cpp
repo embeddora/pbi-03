@@ -188,7 +188,7 @@ const char *Common_MediaPath(const char *fileName)
     filePathEnd++; // Move past the last slash
     filePathEnd[0] = '\0';
 
-    strcat(filePath, "./media/");
+    strcat(filePath, "./resources/sounds/");
     strcat(filePath, fileName);
     gPathList.push_back(filePath);
 
