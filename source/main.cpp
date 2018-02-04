@@ -40,10 +40,12 @@
 
 //extern int FMOD_Main();
 extern int  fmod_init();
+extern void fmod_play0();
 extern void fmod_play1();
 extern void fmod_play2();
 extern void fmod_play3();
 extern void fmod_play4();
+extern void fmod_pause0();
 extern void fmod_pause1();
 extern void fmod_pause2();
 extern void fmod_pause3();
@@ -270,10 +272,11 @@ return 0;
 			printf("[%s] %s Site closed. No opetaion is allowed unless it's opened again next time\n", __FILE__, __func__); 
 			/* Needed, cause libcurl may appear to retain the output */
 			fflush(stdout);
+			/* Wait for a user to bank a kbd to hear the final sound */
+			getchar();
 			/* Stop sound for scene 'scene.bicube' */
 			fmod_pause4();
 
-			getchar();
 		}
 
 		/* Clean after ourselves */
