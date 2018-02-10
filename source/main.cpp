@@ -61,15 +61,6 @@ CURLcode iRes;
 
 char cOpCode[R30_STRNLEN];
 
-#if 0
- fmod_init();
- fmod_play1();
- fmod_play2();
- fmod_play3();
- fmod_dispose();
-return 0;
-#endif /* (0) */
-
 	/* True or forged, we need it for unlocking the site */
 	ComputeRSA();
 
@@ -139,7 +130,7 @@ return 0;
 			/* Play sound for scene 'scene.cube' */
 			fmod_play1();
 			/* Load MESH from a file */
-			engine.initMesh("resources/meshes/scene.cube");
+			engine.initMesh("resources/meshes/prn1.vertex.surface" /*prn1.vertex.surface prn2.vertex.surface */);
 			/* Cyclically process keys and draw a scene  */
 			engine.startRendering();
 			/* Let's open site. Mandatory for any other operation to be effective */
@@ -149,10 +140,11 @@ return 0;
 			/* Stop sound for scene 'scene.cube' */
 			fmod_pause1();
 
+
 			/* Play sound for scene 'scene.bicube' */
 			fmod_play2();
 			/* Load MESH from a file */
-			engine.initMesh("resources/meshes/scene.bicube");
+			engine.initMesh("resources/meshes/flash2.vertex.surface");
 			/* Cyclically process keys and draw a scene  */
 			engine.startRendering();
 			/* Open first tab of site (seems to be must-have in order to proceed). Here <m_TokenFound> becomes 1 */
@@ -164,10 +156,11 @@ return 0;
 			/* Stop sound for scene 'scene.bicube' */
 			fmod_pause2();
 
+
 			/* Play sound for scene 'scene.cube' */
 			fmod_play3();
 			/* Load MESH from a file */
-			engine.initMesh("resources/meshes/scene.cube");
+			engine.initMesh("resources/meshes/flash1.vertex.surface");
 			/* Cyclically process keys and draw a scene  */
 			engine.startRendering();
 			/* Let's deploy a duplication of <Gp aTab2Array[]> to see if it's necessary or not */
@@ -178,6 +171,7 @@ return 0;
 			fprintf(stderr, "[%s] %s Competing Tab2-Open tested\n", __FILE__, __func__);
 			/* Stop sound for scene 'scene.cube' */
 			fmod_pause3();
+
 #if 0
 
 			/* Do the 'Network Map applet' */
@@ -260,10 +254,12 @@ return 0;
 			fprintf(stderr, "[%s] %s cloud applet on Tab2 tested\n", __FILE__, __func__);
 
 #endif /* (0) */
+
+#if 0
 			/* Play sound for scene 'scene.bicube' */
 			fmod_play4();
 			/* Load MESH from a file */
-			engine.initMesh("resources/meshes/scene.bicube");
+			engine.initMesh("resources/meshes/hardware1.vertex.surface");
 			/* Cyclically process keys and draw a scene  */
 			engine.startRendering();
 			/* Exit the site; let's not leave an opened backdoor after us. */
@@ -276,6 +272,7 @@ return 0;
 			getchar();
 			/* Stop sound for scene 'scene.bicube' */
 			fmod_pause4();
+#endif /* (0) */
 
 		}
 

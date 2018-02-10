@@ -301,7 +301,7 @@ const float h       = WINDOW_DEFAULT_SIZE_H;
 
 				//std::cout << "Coords {x=" << m.position.x << ", y=" << m.position.y << ", z=" << m.position.z << "}." << std::endl;
 
-				if ( -3.49 > m.position.z )
+				if ( -3.1415 > m.position.z )
 				{
 
 					//+++this->isRunning = false;
@@ -368,9 +368,9 @@ void Engine::handleEvent(SDL_Event* sdlevent)
 
 			case SDLK_d: { iChanged = 1; fX =  1;break; }
 
-			case SDLK_w: { iChanged = 1; fY = -1;break; }
+			case SDLK_x: { iChanged = 1; fY = -1;break; }
 
-			case SDLK_x: { iChanged = 1; fY =  1;break; }
+			case SDLK_w: { iChanged = 1; fY =  1;break; }
 
 			case SDLK_m: { iChanged = 1; fZ = -1;break; } 
 

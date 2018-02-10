@@ -112,17 +112,19 @@ std::ifstream jsonFile(file);
 		int uvCount = child.second.get<int>("uvCount", 0); // Nb texture's coord per vertex
 
 		// uvCount == 0 -> step 6 / 1 -> step 8 / 2 -> step 10
+#if (0)
 		int verticesPerStep = 6 + (uvCount * 2);
-
+#else
+		// TODO: resolve the hack. (Basically valid as lon as we don't use normals while drawing surfaces.) 
+		int verticesPerStep = 3;
+#endif /*  (0) */
 		int nbVertices = listVertices.size() / verticesPerStep;
 
 		for(int i = 0; i < nbVertices ; ++i)
 		{
-		VectF3 v(listVertices[i * verticesPerStep],
+		VectF3 v(listVertices[i * verticesPerStep], listVertices[i * verticesPerStep + 1],	listVertices[i * verticesPerStep + 2]);
 
-			listVertices[i * verticesPerStep + 1],	listVertices[i * verticesPerStep + 2]);
-
-			VectF3 n(listVertices[i * verticesPerStep + 3],	listVertices[i * verticesPerStep + 4],	listVertices[i * verticesPerStep + 5]);
+		VectF3 n(0.0,0.0,0.0);
 
 			mesh.vertices.push_back(v);
 

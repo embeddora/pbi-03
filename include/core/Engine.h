@@ -93,7 +93,7 @@ class Engine : private Singleton<Engine>
     private:
 	int	iChanged = 0;
 	float	fX, fY, fZ;
-	float	fStep = 0.25;
+	float	fStep = 3.1415;
 
 };
 
