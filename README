@@ -1,0 +1,2 @@
+1) Use 'm' key to approach the object and switch to next scene (it sends POST/GET http-packets)
+2) Use keys 'w'/'x', 'a'/'d', 'n', 'm'  to move object across the scene in 'up'/'down', 'left'/'right', 'back'/'forth' directions
