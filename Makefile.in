@@ -85,7 +85,11 @@ GRBG=	source/render/SDL2/*.o source/render/*.o source/*.o source/core/*.o       
 	include/render/SDL2/*~ include/render/*~ include/math/*~  include/core/*~ \
 	./*.o ./*~ ./_delme.*
 
-GRBGxt= $(TARGET) $(DOCSDIR) core  *.tar.gz resources/*~
+GRBGxt= $(TARGET) core  *.tar.gz resources/*~
+
+GRBGdist=./configure ./Makefile config.status config.log 
+
+GRBGdistdir=./autom4te.cache
 
 
 .PHONY: clean docs tar 
@@ -98,5 +102,8 @@ tar:
 
 clean:
 	rm $(GRBG) $(GRBGxt) ; rm -r -v $(DOCSDIR)
+
+distclean:
+	rm $(GRBG) $(GRBGxt) $(GRBGdist); rm -r -v $(DOCSDIR) ; rm -r -v $(GRBGdistdir)
 
 
