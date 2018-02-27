@@ -35,7 +35,15 @@ CPPFLAGS=-I./include -I./include/sound  -std=gnu++11  -DRESPONCE_LATENCY_GAUGING
 
 
 
-LDFLAGS=    -lSDL2main -lSDL2 -lcurl -lfmod -lpthread -L./libs -Wl,-rpath-link=./libs  -Wl,-rpath=./libs
+	UNAME_P := $(shell uname -p)
+
+ifeq ($(UNAME_P),x86_64)
+	FMODLIB = ./libs/x64
+else
+	FMODLIB = ./libs/x32
+endif
+
+LDFLAGS=    -lSDL2main -lSDL2 -lcurl -lfmod -lpthread -L./$(FMODLIB) -Wl,-rpath-link=./$(FMODLIB)  -Wl,-rpath=./$(FMODLIB)
 
 SND_LDFLAGS= -I./include/sound
 
