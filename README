@@ -1,2 +1,8 @@
-1) Use 'm' key to approach the object and switch to next scene (it sends POST/GET http-packets)
-2) Use keys 'w'/'x', 'a'/'d', 'n', 'm'  to move object across the scene in 'up'/'down', 'left'/'right', 'back'/'forth' directions
+1. sudo apt-get install autoconf
+2. sudo apt-get install libcurl4-gnutls-dev
+3. sudo apt-get install libsdl2-dev
+4. sudo apt-get install libboost-thread-dev
+5. ./all.cmd
+6. ./_main 
+   6.1. Use 'm' key to approach the object and switch to next scene (it sends POST/GET http-packets)
+   6.2. Use keys 'w'/'x', 'a'/'d', 'n', 'm'  to move object across the scene in 'up'/'down', 'left'/'right', 'back'/'forth' directions

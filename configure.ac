@@ -75,6 +75,10 @@ else
 fi
 
 
+AC_LANG_PUSH([C++])
+AC_CHECK_HEADERS([boost/foreach.hpp], [], [AC_MSG_ERROR(You need the Boost libraries. Suggested: sudo apt-get install libboost-thread-dev.  )])
+AC_LANG_POP([C++])
+
 
 AC_SUBST(BUILD_CURL, $BUILD_CURL)
 
