@@ -55,8 +55,8 @@ OBJS=	source/core/Camera.cpp.o source/core/Engine.cpp.o    \
 	source/render/SDL2/DrawSDLUtils.cpp.o                \
 	source/network/reguests.c.o                          \
 	source/sound/fmod.cpp.o                              \
-	source/sound/common.cpp                              \
-	source/sound/common_platform.cpp                              
+	source/sound/common.cpp.o                            \
+	source/sound/common_platform.cpp.o                              
 
 
 # Not cross-compiling till instance for <Linux/i585> platform is ready
