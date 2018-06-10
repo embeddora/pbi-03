@@ -8,7 +8,7 @@
  * Define a generic interface of a window.
  * Any engine rendering element is displayed inside a window.
  *
- * \author  Constantin Masson
+ * \author  Constantin M.
  * \date    July 2017
  */
 class AppWindow
